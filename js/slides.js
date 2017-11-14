@@ -1,15 +1,25 @@
 <script>
-var slideIndex = 0;
+var myIndex = 0,
+    container = document.getElementsByClassName('story_image')[0];
+
 carousel();
 
 function carousel() {
-    var i;
-    var x = document.getElementsByClassName("sp-slider clearfix");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "block"; 
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+  var i,
+      el,
+      x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.opacity = "0";
+  }
+  myIndex++;
+  if (myIndex > x.length) {
+    myIndex = 1
+  }
+  el = x[myIndex - 1];
+  container.style.height = el.height + 'px';
+  setTimeout(function() {
+    el.style.opacity = "1";
+    setTimeout(carousel, 3000);
+  },500);
+}
 </script>
