@@ -77,15 +77,6 @@ a.nav:active {
 	position: absolute;	
 }
 
-.booking:hover{
-	background-color: gray;
-}
-
-.booking:active {
-  background-color: gray;
-  transform: translateY(4px);
-}
-
 .rooms{
 	width: 170px;
 	height: 40px;
