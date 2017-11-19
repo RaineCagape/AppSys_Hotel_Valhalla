@@ -3,7 +3,6 @@
 	<title>Hotel Valhalla</title>
 	<link rel="icon" href="images/logo.png">
 	<script type="text/javascript" src='scripts.js'> </script>
-	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/booking.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,29 +19,46 @@
 					
 				</div>
 				
-		<div class="row">
-			<div class="col-lg-12">	
+				<div class="row">
+					<div class="col-lg-12">	
 					<button type="button" class="booking"> <a href="booking.html" class="nav">Book a Room<br></a></button>
 					<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
 
-			<div class="contDate">
+				<div class="contDate">
 					<h1 class="topLabel">DIRECT BOOKING</h1>
 					<h5 class="subLabel">BEST RATE GUARANTEED!</h5>
-				<form class="datestart">
+
+			<form class="fullForm">		
+				
+				<div class="datestart">
 					<h4 class="begin">Check-in Date</h4> 
 					<input type="date" name="dayStart" id="dayStart" class="start">
 				</form>
 
 				<form class="dateend">
-					<h4 class="stop"> Check-out Date</h4>
-					<input type="date" name="dayStart" id="dayStart" class="start">
+					<h4 class="stop">Check-out Date</h4>
+					<input type="date" name="dayEnd" id="dayEnd" class="end">
 				</form>
 
+				<form class="reservename">
+					<h4 class="reserveNme">Reservation Name</h4>
+					<input type="text" name="rname" id="rname" class="resname" placeholder="Enter Name">
+				</form>
 
-			</div>	
-		</div>
-	</div>
-					  	<div class="footer"></div>
+				<form class="prefcode">
+					<h4 class="prefLabel">Preferential Code</h4>
+					<input type="text" name="prefCode" id="code" class="code" placeholder="Code">
+				</form>
+
+				<input type="submit" value="Book Now!" class="submit">
+
+			</form>
+
+					</div>	
+				</div>
+			</div>
+
+				<div class="footer"></div>			
 	</div>
 
 	

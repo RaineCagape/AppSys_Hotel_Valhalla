@@ -8,11 +8,119 @@
   opacity: 0;
 }
 
+body{
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url("cssimages/hotel11.jpg")
+}
+
+.container{
+  margin: 0 auto;
+  width: 100%;
+}
+
+.col-lg-12{
+  margin: 0 auto;
+  width: 100%;
+  min-width: 1000px;
+  left: -90px;
+}
+
+
+.row{
+  width: 100%;
+  min-width: 1349px;
+
+}
+
+.header{
+  background-image: url("cssimages/header.png");
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  height: 60px;
+  width: 110%;
+  min-width: 1000px;
+  padding: 5px 10px;
+}
+
+#logo {
+  margin-top: -22px;
+  margin-bottom: 5px;
+  float: left;
+}
+#logo img {
+  display: block;
+  margin: 0 0 0 5px;
+}
+
+a.nav:link {
+    color: white;
+}
+
+a.nav:visited {
+    color: white;
+}
+
+a.nav:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a.nav:active {
+    color: white;
+}
+
+.booking{
+  width: 150px;
+  height: 40px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 20px;
+  color: white;
+  right: 230px;
+  top: 7px;
+    overflow: hidden;
+    white-space: nowrap;
+  position: absolute; 
+}
+
+.rooms{
+  width: 170px;
+  height: 40px;
+  min-width: 100px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 20px;
+  color: white;
+  right: 50px;
+  top: 7px;
+  padding: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+  position: absolute;
+}
+
+
+.gif{
+  font-family: century gothic;
+  color: #CFB53B; 
+  top: 20px;
+  position: absolute;
+}
+
 h1.topLabel{
     font-family: century gothic;
     top: 50px;
     left: 100px;
     position: absolute;
+    color: white;
 }
 
 h5.subLabel{
@@ -20,52 +128,104 @@ h5.subLabel{
     top: 100px;
     left: 102px;
     position: absolute;
+    color: white;
 }
-
 
 .contDate{
   background-image: url("cssimages/hotel11.png");
   background-size: cover;
   width: 100%;
   height: 300px;
-  top: 30px;
+  top: 0px;
   position: absolute;
 
+}
+
+.fullForm{
+  background-image: url("cssimages/hotel11.png");
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  top: 70px;
+  left: -15px;
+  position: absolute;
 }
 
 .datestart{
   position: absolute;
-  height: 200px;
-  width: 900px;
+  height: 100px;
+  width: 250px;
   padding: 20px;
   margin: 20px;
-  top: 205px;
+  top: 100px;
+  left: 130px;
+
 }
 
 .dateend{
   position: absolute;
-  height: 200px;
-  width: 900px;
+  height: 100px;
+  width: 250px;
   padding: 20px;
-  margin: 20px;
-  top: 205px;
+  margin: 0px;
+  top: 0px;
+  left: 250px;
+}
+
+.reservename{
+  position: absolute;
+  height: 100px;
+  width: 250px;
+  padding: 20px;
+  margin: 0px;
+  top: 0px;
   left: 500px;
 }
 
+.prefcode{
+  position: absolute;
+  height: 100px;
+  width: 250px;
+  padding: 20px;
+  margin: 0px;
+  top: 0px;
+  left: 750px;
+}
+
 h4.begin{
-  font-family:  century gothic;
-  color: black;
+ font-family:  century gothic;
+ color: black;
  position: absolute;
- top: -15px;
- left: 160px;
+ top: 0px;
+ left: 10px;
+ color: white;
 }
 
 h4.stop{
  font-family:  century gothic;
  color: black;
  position: absolute;
- top: -15px;
- left: 160px;
+ top: 0px;
+ left: 10px;
+ color: white;
+}
+
+h4.reserveNme{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 2px;
+ left: 10px;
+ color: white;
+}
+
+h4.prefLabel{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 2px;
+ left: 10px;
+ color: white;
 }
 
 label {
@@ -83,11 +243,9 @@ input.start {
   margin: 10px;
   width: 210px;
   height: 50px;
-  top: 250px;
-  left: 100px;
   position: absolute;
-  top: 10px;
-  left: 150px;
+  top: 25px;
+  left: 0px;
 }
 
 input.end {
@@ -101,9 +259,68 @@ input.end {
   margin: 10px;
   width: 210px;
   height: 50px;
-  top: 250px;
-  left: 500px;
   position: absolute;
-  top: 10px;
-  left: 150px;
+  top: 25px;
+  left: 0px;
+}
+
+input.resname {
+  border: 1px solid #c4c4c4;
+  font-family: century gothic;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  margin: 10px;
+  width: 210px;
+  height: 50px;
+  position: absolute;
+  top: 25px;
+  left: 0px;
+}
+
+input.code {
+  border: 1px solid #c4c4c4;
+  font-family: century gothic;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  margin: 10px;
+  width: 210px;
+  height: 50px;
+  position: absolute;
+  top: 25px;
+  left: 0px;
+}
+
+.footer{
+  background-color: black;
+  height: 300px;
+  width: 100%;
+  min-width: 1000px;
+  bottom: -800px;
+  left: 0px;
+  position: absolute;
+}
+
+
+.submit{
+  width: 170px;
+  height: 40px;
+  min-width: 100px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 20px;
+  color: white;
+  left: 400px;
+  top: 125px;
+  padding: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+  position: absolute;
 }
