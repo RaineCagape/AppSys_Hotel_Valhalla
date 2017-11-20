@@ -14,6 +14,7 @@ body{
   width: 100%;
   background-repeat: no-repeat;
   background-image: url("cssimages/hotel11.jpg")
+  
 }
 
 .container{
@@ -117,7 +118,7 @@ a.nav:active {
 
 h1.topLabel{
     font-family: century gothic;
-    top: 50px;
+    top: -10px;
     left: 100px;
     position: absolute;
     color: white;
@@ -125,28 +126,26 @@ h1.topLabel{
 
 h5.subLabel{
     font-family: century gothic;
-    top: 100px;
-    left: 102px;
+    top: 40px;
+    left: 235px;
     position: absolute;
     color: white;
 }
 
 .contDate{
-  background-image: url("cssimages/hotel11.png");
   background-size: cover;
   width: 100%;
   height: 300px;
-  top: 0px;
+  top: 60px;
   position: absolute;
 
 }
 
 .fullForm{
-  background-image: url("cssimages/hotel11.png");
   background-size: cover;
   width: 100%;
-  height: 500px;
-  top: 70px;
+  height: 300px;
+  top: 30px;
   left: -15px;
   position: absolute;
 }
@@ -182,7 +181,7 @@ h5.subLabel{
   left: 500px;
 }
 
-.prefcode{
+.roomType{
   position: absolute;
   height: 100px;
   width: 250px;
@@ -219,7 +218,7 @@ h4.reserveNme{
  color: white;
 }
 
-h4.prefLabel{
+h4.roomLabel{
  font-family:  century gothic;
  color: black;
  position: absolute;
@@ -280,7 +279,7 @@ input.resname {
   left: 0px;
 }
 
-input.code {
+select.room {
   border: 1px solid #c4c4c4;
   font-family: century gothic;
   font-size: 16px;
@@ -289,7 +288,7 @@ input.code {
   padding: 3px 5px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   margin: 10px;
-  width: 210px;
+  width: 250px;
   height: 50px;
   position: absolute;
   top: 25px;
@@ -324,3 +323,4 @@ input.code {
   word-wrap: break-word;
   position: absolute;
 }
+
