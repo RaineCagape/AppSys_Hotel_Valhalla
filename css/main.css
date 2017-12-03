@@ -53,8 +53,13 @@ a.nav:visited {
 }
 
 a.nav:hover {
-    color: white;
+    color: black;
     text-decoration: none;
+    -webkit-transition: color .5s linear;
+  	-moz-transition: color .5s linear;
+	 -ms-transition: color .5s linear;
+	 -o-transition: color .5s linear;
+	 transition: color .5s linear;
 }
 
 a.nav:active {
@@ -70,7 +75,7 @@ a.nav:active {
 	font-family: century gothic;
 	font-size: 20px;
 	color: white;
-	right: 230px;
+	right: 350px;
 	top: 7px;
     overflow: hidden;
   	white-space: nowrap;
@@ -87,13 +92,41 @@ a.nav:active {
 	font-family: century gothic;
 	font-size: 20px;
 	color: white;
-	right: 50px;
+	right: 160px;
 	top: 7px;
 	padding: 5px;
 	white-space: normal;
 	word-wrap: break-word;
 	position: absolute;
 }
+
+.log{
+	width: 100px;
+	height: 40px;
+	min-width: 100px;
+	background-color: #CFB53B;
+	border-style: hidden;
+	border-radius: 5px;
+	font-family: century gothic;
+	font-size: 20px;
+	color: white;
+	right: 42px;
+	top: 7px;
+	padding: 5px;
+	white-space: normal;
+	word-wrap: break-word;
+	position: absolute;
+}
+
+.logmenu{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 1315px;
+	top: 30px;
+}
+
+
 
 
 .gif{
@@ -142,10 +175,10 @@ a.nav:active {
 .footer{
 	
 	background-color: black;
-	height: 300px;
+	height: 250px;
 	width: 100%;
 	min-width: 1000px;
-	bottom: -3000px;
+	bottom: -5000px;
 	left: 0px;
 	position: absolute;
 }

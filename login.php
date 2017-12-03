@@ -1,7 +1,5 @@
-<?php
+?php
 	session_start();
-
-
 ?>
 
 <html>
@@ -10,6 +8,7 @@
 	<link rel="icon" href="images/logo.png">
 	<script type="text/javascript" src='scripts.js'> </script>
 	<link rel="stylesheet" href="css/main.css">
+	<script src="js/login.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -18,20 +17,33 @@
 <body>
 
 	<div class="container">
-
-
-			<nav>
 				<div class="header">	
 					<div id="logo"><a href="index.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
-
 				</div>
-			</nav>	
 				
 		<div class="row">
 			<div class="col-lg-12">	
 					<button type="button" class="booking"> <a href="booking.html" class="nav">Book a Room<br></a></button>
 					<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
-					<button type="button" class="log"><a href="login.html" class="nav">Log In</a></button>
+
+					<ul>
+						<li id="login">
+						<a id="login-trigger" href="#"><img src="images/menu.png" class="logmenu"></a>	
+						<div id="login-content">
+					        <form>
+					          <fieldset id="inputs">
+					            <input id="username" type="email" name="Email" placeholder="Your email address" required>   
+					            <input id="password" type="password" name="Password" placeholder="Password" required>
+					          </fieldset>
+					          <fieldset id="actions">
+					            <input type="submit" id="submit" value="Log in">
+					            <label><input type="checkbox" checked="checked"> Keep me signed in</label>
+					          </fieldset>
+					        </form>
+					      </div>                     
+					    </li>
+					
+
 
 				<div class="slideshow">
 		 
@@ -73,13 +85,7 @@
 
 				</div>
 		  </div>
-					  	<div class="footer">
-					  		<div class="contactus">
-					  			<h3>Contact Us</h3>
-					  		</div>	
-
-
-					  	</div>
+					  	<div class="footer"></div>
 
 		</div>	
 

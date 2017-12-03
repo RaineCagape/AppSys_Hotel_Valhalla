@@ -1,20 +1,9 @@
-[type="date"] {
-  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
-}
-[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-
 body{
   overflow-x: hidden;
   position: absolute;
   width: 100%;
   background-repeat: no-repeat;
-  background-image: url("cssimages/hotel11.jpg"); 
-  
+  background-image: url("cssimages/bglogin.png"); 
 }
 
 .container{
@@ -55,6 +44,13 @@ body{
 #logo img {
   display: block;
   margin: 0 0 0 5px;
+}
+
+#logo img:hover {
+ transform: scale(1.1);
+  -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
 
 a.nav:link {
@@ -132,17 +128,9 @@ a.nav:active {
 }
 
 
-
-.gif{
-  font-family: century gothic;
-  color: #CFB53B; 
-  top: 20px;
-  position: absolute;
-}
-
 h1.topLabel{
     font-family: century gothic;
-    top: -10px;
+    top: 40px;
     left: 100px;
     position: absolute;
     color: white;
@@ -150,112 +138,93 @@ h1.topLabel{
 
 h5.subLabel{
     font-family: century gothic;
-    top: 40px;
-    left: 235px;
+    top: 100px;
+    left: 100px;
     position: absolute;
     color: white;
 }
 
-.contDate{
-  background-size: cover;
-  width: 100%;
-  height: 300px;
-  top: 60px;
-  position: absolute;
-
+h5.username{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 100px;
+ left: 260px;
+ color: white;
 }
 
-.fullForm{
-  background-size: cover;
-  width: 100%;
-  height: 300px;
-  top: 150px;
-  left: 150px;
-  position: absolute;
+h5.pass{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 190px;
+ left: 260px;
+ color: white;
 }
 
-.datestart{
-  position: absolute;
-  height: 100px;
-  width: 250px;
-  padding: 20px;
-  margin: 20px;
-  top: -20px;
-  left: -20px;
-
+h5.confpass{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 280px;
+ left: 260px;
+ color: white;
 }
 
-.dateend{
+h5.fname{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 100px;
+ left: 550px;
+ color: white;
+}
+
+h5.lname{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 190px;
+ left: 550px;
+ color: white;
+}
+
+h5.email{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 280px;
+ left: 550px;
+ color: white;
+}
+
+h5.gender{
+ font-family:  century gothic;
+ color: black;
+ position: absolute;
+ top: 100px;
+ left: 850px;
+ color: white;
+}
+
+
+input.username {
+  border: 1px solid #c4c4c4;
+  font-family: century gothic;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  margin: 10px;
+  width: 230px;
+  height: 30px;
   position: absolute;
-  height: 100px;
-  width: 250px;
-  padding: 20px;
-  margin: 0px;
-  top: 0px;
+  top: 130px;
   left: 250px;
 }
 
-.reservename{
-  position: absolute;
-  height: 100px;
-  width: 250px;
-  padding: 20px;
-  margin: 0px;
-  top: 0px;
-  left: 500px;
-}
-
-.roomType{
-  position: absolute;
-  height: 100px;
-  width: 250px;
-  padding: 20px;
-  margin: 0px;
-  top: 0px;
-  left: 750px;
-}
-
-h4.begin{
- font-family:  century gothic;
- color: black;
- position: absolute;
- top: 0px;
- left: 10px;
- color: white;
-}
-
-h4.stop{
- font-family:  century gothic;
- color: black;
- position: absolute;
- top: 0px;
- left: 10px;
- color: white;
-}
-
-h4.reserveNme{
- font-family:  century gothic;
- color: black;
- position: absolute;
- top: 2px;
- left: 10px;
- color: white;
-}
-
-h4.roomLabel{
- font-family:  century gothic;
- color: black;
- position: absolute;
- top: 2px;
- left: 10px;
- color: white;
-}
-
-label {
-  display: block;
-}
-
-input.start {
+input.password {
   border: 1px solid #c4c4c4;
   font-family: century gothic;
   font-size: 16px;
@@ -264,14 +233,14 @@ input.start {
   padding: 3px 5px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   margin: 10px;
-  width: 210px;
-  height: 50px;
+  width: 230px;
+  height: 30px;
   position: absolute;
-  top: 25px;
-  left: 0px;
+  top: 220px;
+  left: 250px;
 }
 
-input.end {
+input.confirmpassword {
   border: 1px solid #c4c4c4;
   font-family: century gothic;
   font-size: 16px;
@@ -280,14 +249,14 @@ input.end {
   padding: 3px 5px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   margin: 10px;
-  width: 210px;
-  height: 50px;
+  width: 230px;
+  height: 30px;
   position: absolute;
-  top: 25px;
-  left: 0px;
+  top: 320px;
+  left: 250px;
 }
 
-input.resname {
+input.firstnme {
   border: 1px solid #c4c4c4;
   font-family: century gothic;
   font-size: 16px;
@@ -296,14 +265,14 @@ input.resname {
   padding: 3px 5px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   margin: 10px;
-  width: 210px;
-  height: 50px;
+  width: 230px;
+  height: 30px;
   position: absolute;
-  top: 25px;
-  left: 0px;
+  top: 130px;
+  left: 550px;
 }
 
-select.room {
+input.lastnme {
   border: 1px solid #c4c4c4;
   font-family: century gothic;
   font-size: 16px;
@@ -312,36 +281,55 @@ select.room {
   padding: 3px 5px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   margin: 10px;
-  width: 250px;
-  height: 50px;
+  width: 230px;
+  height: 30px;
   position: absolute;
-  top: 25px;
-  left: 0px;
+  top: 220px;
+  left: 550px;
 }
 
-.footer{
-  background-color: black;
-  height: 250px;
-  width: 100%;
-  min-width: 1000px;
-  bottom: -800px;
-  left: 0px;
+input.emadd {
+  border: 1px solid #c4c4c4;
+  font-family: century gothic;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  margin: 10px;
+  width: 230px;
+  height: 30px;
   position: absolute;
+  top: 320px;
+  left: 550px;
 }
 
+.containgender{
+  position: absolute;
+  left: 850px;
+  top: 140px;
+  height: 200px;
+  width: 200px;
+}
+
+span.gendlabel{
+  color: white;
+  font-family: century gothic;
+  margin: 10px;
+}
 
 .submit{
-  width: 170px;
+  width: 130px;
   height: 40px;
   min-width: 100px;
   background-color: #CFB53B;
   border-style: hidden;
   border-radius: 5px;
   font-family: century gothic;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
-  left: 400px;
-  top: 125px;
+  left: 870px;
+  top: 380px;
   padding: 5px;
   white-space: normal;
   word-wrap: break-word;
@@ -356,4 +344,95 @@ select.room {
    -ms-transition: color .5s linear;
    -o-transition: color .5s linear;
    transition: color .5s linear;
+}
+
+.cancel{
+  width: 130px;
+  height: 40px;
+  min-width: 100px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 17px;
+  color: white;
+  left: 1020px;
+  top: 380px;
+  padding: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+  position: absolute;
+}
+
+.cancel:hover {
+    color: black;
+    text-decoration: none;
+    -webkit-transition: color .5s linear;
+    -moz-transition: color .5s linear;
+   -ms-transition: color .5s linear;
+   -o-transition: color .5s linear;
+   transition: color .5s linear;
+}
+
+
+.footer{
+  background-color: black;
+  height: 250px;
+  width: 100%;
+  min-width: 1000px;
+  bottom: -750px;
+  left: 0px;
+  position: absolute;
+  border-top: solid;
+  border-color: #CFB53B;
+  border-width: 1px;
+}
+
+img.divide{
+  position: absolute;
+  top: 150px;
+  left: 600px;
+  width: 20px;
+}
+
+.register{
+  width: 100%;
+  height: 450px;
+  top: 50px;
+  position: absolute;
+}
+
+.footerinfo{
+  border-style: solid;
+  border-color: white;
+  height: 250px;
+  padding: 20px;
+}
+
+.aboutus{
+  top: 21px;
+  left: 250px;
+  position: absolute;
+}
+
+.sponsors{
+  top: 21px;
+  left: 650px;
+  position: absolute;
+}
+
+h3.footerheaders{
+  font-family: century gothic;
+  color: #CFB53B;
+}
+
+h5.info{
+  font-family: century gothic;
+  color: #CFB53B;
+}
+
+.vikings{
+  height: 100px;
+  width: 100px;
+  position: absolute;
 }

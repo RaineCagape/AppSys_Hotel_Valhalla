@@ -1,0 +1,47 @@
+.footer{
+  background-color: black;
+  height: 250px;
+  width: 100%;
+  min-width: 1000px;
+  bottom: -750px;
+  left: 0px;
+  position: absolute;
+  border-top: solid;
+  border-color: #CFB53B;
+  border-width: 1px;
+}
+
+.footerinfo{
+  border-style: solid;
+  border-color: white;
+  height: 250px;
+  padding: 20px;
+}
+
+.aboutus{
+  top: 21px;
+  left: 250px;
+  position: absolute;
+}
+
+.sponsors{
+  top: 21px;
+  left: 650px;
+  position: absolute;
+}
+
+h3.footerheaders{
+  font-family: century gothic;
+  color: #CFB53B;
+}
+
+h5.info{
+  font-family: century gothic;
+  color: #CFB53B;
+}
+
+.vikings{
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
