@@ -1,7 +1,5 @@
 <?php
 	session_start();
-
-
 ?>
 
 <html>
@@ -29,10 +27,9 @@
 				
 		<div class="row">
 			<div class="col-lg-12">	
-					<button type="button" class="booking"> <a href="booking.html" class="nav">Book a Room<br></a></button>
-					<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
-					<button type="button" class="log"><a href="login.html" class="nav">Log In</a></button>
-
+					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
+					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
+					<button type="button" class="log" onclick="window.location.href='login.php'"><a href="login.php" class="nav">Log In</a></button>
 				<div class="slideshow">
 		 
 		  				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -73,13 +70,7 @@
 
 				</div>
 		  </div>
-					  	<div class="footer">
-					  		<div class="contactus">
-					  			<h3>Contact Us</h3>
-					  		</div>	
-
-
-					  	</div>
+					  	<div class="footer"></div>
 
 		</div>	
 

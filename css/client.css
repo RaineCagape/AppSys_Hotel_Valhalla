@@ -2,7 +2,6 @@ body{
   overflow-x: hidden;
   position: absolute;
   width: 100%;
-  background-repeat: no-repeat;
   background-image: url("cssimages/bglogin.png"); 
 }
 
@@ -86,8 +85,8 @@ a.nav:active {
   color: white;
   right: 350px;
   top: 7px;
-    overflow: hidden;
-    white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
   position: absolute; 
 }
 
@@ -158,13 +157,100 @@ h4.user{
   padding: 5px;
 }
 
+h2.infolabel{
+  font-family: century gothic;
+  color: #CFB53B;
+  padding: 5px;
+  position: absolute;
+  top: 330px;
+  left: 350px;
+}
+
+h5.warning{
+  font-family: century gothic;
+  color: white;
+  padding: 5px;
+  position: absolute;
+  top: 380px;
+  left: 350px;
+}
+
+.policies{
+  position: absolute;
+  width: 900px;
+  height: 970px;
+  top: 430px;
+  left: 330px;
+  margin: 10px;
+}
+
+.privacy{
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #CFB53B;
+  position: absolute;
+  width: 870px;
+  height: 300px;
+  top: 10px;
+  left: 10px;
+  overflow-y: auto;
+}
+
+h3.policylabel{
+  font-family: century gothic;
+  color: #CFB53B;
+  padding: 0px 15px;
+}
+
+h5.policyinfolabel{
+  font-family: century gothic;
+  color: #CFB53B;
+  padding: 10px;
+  margin: 5px;
+  
+}
+
+h5.policyinfo{
+  font-family: century gothic;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+
+}
+
+.payment{
+   border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #CFB53B;
+  position: absolute;
+  width: 870px;
+  height: 300px;
+  top: 330px;
+  left: 10px;
+  overflow-y: auto;
+}
+
+.cancel{
+   border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #CFB53B;
+  position: absolute;
+  width: 870px;
+  height: 300px;
+  top: 650px;
+  left: 10px;
+}
+
 
 .footer{
   background-color: black;
   height: 250px;
   width: 100%;
   min-width: 1000px;
-  bottom: -1000px;
+  bottom: -1800px;
   left: 0px;
   position: absolute;
   border-top: solid;
@@ -173,8 +259,6 @@ h4.user{
 }
 
 .footerinfo{
-  border-style: solid;
-  border-color: white;
   height: 250px;
   padding: 20px;
 }

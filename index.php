@@ -1,8 +1,21 @@
 <?php
-	session_start();
 
+	// Initialize the session
+	 require_once 'config.php';
+	 session_start();
 
+ 	// If session variable is not set it will redirect to login page
+  	 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  	 header("location: login.php");
+  
+   	exit;
+	 }
+
+	 $username = $_SESSION['username'];
+
+ 		
 ?>
+
 
 <html>
 <head>
@@ -20,15 +33,18 @@
 	<div class="container">
 
 
+			<nav>
 				<div class="header">	
 					<div id="logo"><a href="index.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
-					
+
 				</div>
+			</nav>	
 				
 		<div class="row">
 			<div class="col-lg-12">	
-					<button type="button" class="booking"> <a href="booking.html" class="nav">Book a Room<br></a></button>
-					<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
+					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
+					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
+					<button type="button" class="log" onclick="window.location.href='logout.php'"><a href="logout.php" class="nav">Log Out</a></button>
 
 				<div class="slideshow">
 		 
@@ -70,7 +86,13 @@
 
 				</div>
 		  </div>
-					  	<div class="footer"></div>
+					  	<div class="footer">
+					  		<div class="contactus">
+					  			<h3>Contact Us</h3>
+					  		</div>	
+
+
+					  	</div>
 
 		</div>	
 

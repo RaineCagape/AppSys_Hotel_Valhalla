@@ -86,8 +86,8 @@ a.nav:active {
   color: white;
   right: 350px;
   top: 7px;
-    overflow: hidden;
-    white-space: nowrap;
+  overflow: hidden;
+  white-space: nowrap;
   position: absolute; 
 }
 
@@ -403,8 +403,6 @@ img.divide{
 }
 
 .footerinfo{
-  border-style: solid;
-  border-color: white;
   height: 250px;
   padding: 20px;
 }

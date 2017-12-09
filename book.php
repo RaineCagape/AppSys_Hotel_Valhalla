@@ -1,3 +1,22 @@
+<?php 
+	
+	include 'config.php';
+
+	session_start();
+
+	if(!isset($_SESSION['username'])|| empty($_SESSION['username'])){
+
+		header("location:login.php");
+
+		exit;
+	}
+
+	$username = $_SESSION['username'];
+	$
+
+?>
+
+
 <html>
 <head>
 	<title>Book a Room | Hotel Valhalla</title>
@@ -22,7 +41,7 @@
 					<div class="col-lg-12">	
 						<button type="button" class="booking"><a href="booking.html" class="nav">Book a Room<br></a></button>
 						<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
-						<button type="button" class="log"><a href="login.html" class="nav">Log In</a></button>
+						<button type="button" class="log"><a href="greetingpage.html" class="nav">Log Out</a></button>
 
 					<div class="contDate">
 						<h1 class="topLabel">DIRECT BOOKING</h1>
