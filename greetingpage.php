@@ -1,8 +1,4 @@
-<?php
-	session_start();
 
-
-?>
 
 <html>
 <head>
@@ -20,18 +16,20 @@
 	<div class="container">
 
 
-			<nav>
+				<nav>
 				<div class="header">	
-					<div id="logo"><a href="index.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
+					     <?php
+                            include 'headernotin.php';
+                         ?> 
 
 				</div>
-			</nav>	
+			</nav>		
 				
 		<div class="row">
 			<div class="col-lg-12">	
-					<button type="button" class="booking"> <a href="booking.html" class="nav">Book a Room<br></a></button>
-					<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
-					<button type="button" class="log"><a href="login.html" class="nav">Log In</a></button>
+				 <?php
+                            include 'headbuttonnotin.php';
+                  ?> 
 
 				<div class="slideshow">
 		 
@@ -74,11 +72,10 @@
 				</div>
 		  </div>
 					  	<div class="footer">
-					  		<div class="contactus">
-					  			<h3>Contact Us</h3>
-					  		</div>	
-
-
+					  		
+                        <?php
+                            include 'footer.php';
+                         ?> 
 					  	</div>
 
 		</div>	

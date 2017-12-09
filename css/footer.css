@@ -1,19 +1,5 @@
-.footer{
-  background-color: black;
-  height: 250px;
-  width: 100%;
-  min-width: 1000px;
-  bottom: -750px;
-  left: 0px;
-  position: absolute;
-  border-top: solid;
-  border-color: #CFB53B;
-  border-width: 1px;
-}
 
 .footerinfo{
-  border-style: solid;
-  border-color: white;
   height: 250px;
   padding: 20px;
 }

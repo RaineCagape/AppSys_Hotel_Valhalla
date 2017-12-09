@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-	<div class="footerinfo">
+<div class="footerinfo">
 								<h3 class="footerheaders">Contact Us</h3>
 											  			
 								<h5 class="info">Inigo St., Bo. Obrero, </br>Davao City, 8000</h5>
@@ -26,6 +26,6 @@
 
 									<img src="images/vikingslogo.png" class="vikings">
 								</div>
-
+</div>	
 </body>
 </html>

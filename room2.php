@@ -20,18 +20,18 @@
 
 			<nav>
 				<div class="header">	
-					<div id="logo"><a href="index.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
+					     <?php
+                            include 'headernotin.php';
+                         ?> 
 
 				</div>
 			</nav>		
 				
 		<div class="row">
 			<div class="col-lg-12">	
-					<button type="button" class="booking"> <a href="booking.html" class="nav">Book a Room<br></a></button>
-					<button type="button" class="rooms"><a href="room.html" class="nav">Accomodations</a></button>
-					<button type="button" class="log"><a href="login.html" class="nav">Log In</a></button>
-				</div>
-		  </div>
+				 <?php
+                            include 'headbuttonnotin.php';
+                  ?> 
 
 		  <div class="room">
 				<div class="solo">
@@ -43,6 +43,7 @@
 						  <li>Room Size: 40 sq. m.</li>
 						  <li>Bed Size: 38" x 75"</li>
 						  <li>Rate: Php 2,500.00/day </li>
+						  <li>Room Number: 1 </li>
 					</ul>
 
 				</div>
@@ -50,12 +51,13 @@
 				<div class="twin">
 					<h2 class="roomfonts2">Freyr and Freya's Twin Double Bed Deluxe</h2>
 					<img src="images/hotel8.png" class="beds2">
-					<h5 class="roomdescript2">Having a travel buddy with you makes an entire stay more fun and charming, so here at </br> Hotel Valhalla, we have an exiting room just for you and your buddy. With the vanir twins </br> Freyr and Freya's twin double bed deluxe, you and your companion will have an </br> experience of a lifetime. PUTA BULLSHIT NA NI </h5>
+					<h5 class="roomdescript2">Having a travel buddy with you makes an entire stay more fun and charming, so here at </br> Hotel Valhalla, we have an exiting room just for you and your buddy. With the vanir twins </br> Freyr and Freya's twin double bed deluxe, you and your companion will have an </br> experience of a lifetime. </h5>
 
 					<ul class="details2">
 						  <li>Room Size: 50 sq. m.</li>
 						  <li>Bed Size: 38" x 75"</li>
 						  <li>Rate: Php 3,500.00/day </li>
+						  <li>Room Number: 2 </li>
 					</ul>
 				</div>
 
@@ -68,6 +70,7 @@
 						  <li>Room Size: 70 sq. m.</li>
 						  <li>Bed Size: 60" x 80"</li>
 						  <li>Rate: Php 8,499.00/day </li>
+						  <li>Room Number: 3 </li>
 					</ul>
 				</div>
 
@@ -80,6 +83,7 @@
 						  <li>Room Size: 90 sq. m.</li>
 						  <li>Bed Size: 38" x 75"</li>
 						  <li>Rate: Php 9,399.00/day </li>
+						  <li>Room Number: 4 </li>
 					</ul>
 				</div>
 
@@ -92,23 +96,30 @@
 						  <li>Room Size: 150 sq. m.</li>
 						  <li>Bed Size: 60" x 90"</li>
 						  <li>Rate: Php 15,000.00/day </li>
+						  <li>Room Number: 5 </li>
 					</ul>
 				</div>
 
 				<div class="penthouse">
 					<h2 class="roomfonts2">Heimdall's Rainbow Bridge Penthouse</h2>
 					<img src="images/hotel23.png" class="beds2">
-					<h5 class="roomdescript2">Ah, the ultimate Hotel Valhalla Experience, Heimdall's Rainbow Bridge Penthouse. Watch </br> over the nine realms with the highest vantage point and the best of view. Just get </br>Gjallarhorn ready just in case Ragnarok peeks around the corner</h5>
+					<h5 class="roomdescript2">Ah, the ultimate Hotel Valhalla Experience, Heimdall's Rainbow Bridge Penthouse. Watch </br> over the nine realms with the highest vantage point and the best of view. Just get </br>Gjallarhorn ready just in case Ragnarok peeks around the corner.</h5>
 
 					<ul class="details2">
 						  <li>Room Size: 160 sq. m.</li>
 						  <li>Bed Size: 65" x 90"</li>
 						  <li>Rate: Php 16,000.00/day </li>
+						  <li>Room Number: 6 </li>
 					</ul>
 				</div>
 			</div>	
 		  
-					  	<div class="footer"></div>
+					  	<div class="footer">
+					  		
+                        <?php
+                            include 'footer.php';
+                         ?> 
+					  	</div>
 
 	</div>	
 
