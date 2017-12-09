@@ -37,6 +37,89 @@ body{
 }
 
 
+<<<<<<< HEAD
+=======
+#logo img:hover {
+ transform: scale(1.1);
+  -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+a.nav:link {
+    color: white;
+}
+
+a.nav:visited {
+    color: white;
+}
+
+a.nav:hover {
+    color: black;
+    text-decoration: none;
+    -webkit-transition: color .5s linear;
+    -moz-transition: color .5s linear;
+   -ms-transition: color .5s linear;
+   -o-transition: color .5s linear;
+   transition: color .5s linear;
+}
+
+a.nav:active {
+    color: white;
+}
+
+.booking{
+  width: 150px;
+  height: 40px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 20px;
+  color: white;
+  right: 350px;
+  top: 7px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute; 
+}
+
+.rooms{
+  width: 170px;
+  height: 40px;
+  min-width: 100px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 20px;
+  color: white;
+  right: 160px;
+  top: 7px;
+  padding: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+  position: absolute;
+}
+
+.log{
+  width: 100px;
+  height: 40px;
+  min-width: 100px;
+  background-color: #CFB53B;
+  border-style: hidden;
+  border-radius: 5px;
+  font-family: century gothic;
+  font-size: 20px;
+  color: white;
+  right: 42px;
+  top: 7px;
+  padding: 5px;
+  white-space: normal;
+  word-wrap: break-word;
+  position: absolute;
+}
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 
 
 h1.topLabel{
@@ -312,3 +395,39 @@ img.divide{
   top: 50px;
   position: absolute;
 }
+<<<<<<< HEAD
+=======
+
+.footerinfo{
+  height: 250px;
+  padding: 20px;
+}
+
+.aboutus{
+  top: 21px;
+  left: 250px;
+  position: absolute;
+}
+
+.sponsors{
+  top: 21px;
+  left: 650px;
+  position: absolute;
+}
+
+h3.footerheaders{
+  font-family: century gothic;
+  color: #CFB53B;
+}
+
+h5.info{
+  font-family: century gothic;
+  color: #CFB53B;
+}
+
+.vikings{
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1

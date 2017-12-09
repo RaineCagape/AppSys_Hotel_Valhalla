@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 	
 	include 'config.php';
@@ -12,8 +13,26 @@
 	}
 
 	$username = $_SESSION['username'];
+=======
+<?php
 
+	// Initialize the session
+	 require_once 'config.php';
+	 session_start();
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
+
+ 	// If session variable is not set it will redirect to login page
+  	 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  	 header("location: login.php");
+  
+   	exit;
+	 }
+
+	 $username = $_SESSION['username'];
+
+ 		
 ?>
+
 
 <html>
 <head>
@@ -29,6 +48,7 @@
 <body>
 
 	<div class="container">
+<<<<<<< HEAD
 			<nav>
 				<div class="header">	
 					     <?php
@@ -44,6 +64,22 @@
                             include 'headbutton.php';
                   ?> 
 
+=======
+
+
+			<nav>
+				<div class="header">	
+					<div id="logo"><a href="index.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
+
+				</div>
+			</nav>	
+				
+		<div class="row">
+			<div class="col-lg-12">	
+					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
+					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
+					<button type="button" class="log" onclick="window.location.href='logout.php'"><a href="logout.php" class="nav">Log Out</a></button>
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 
 				<div class="slideshow">
 		 
@@ -86,10 +122,17 @@
 				</div>
 		  </div>
 					  	<div class="footer">
+<<<<<<< HEAD
 					  	
 					  	<?php
 					  	 	include 'footer.php';
 					  	 ?>	
+=======
+					  		<div class="contactus">
+					  			<h3>Contact Us</h3>
+					  		</div>	
+
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 
 					  	</div>
 

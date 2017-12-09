@@ -20,18 +20,29 @@
 
 			<nav>
 				<div class="header">	
+<<<<<<< HEAD:room.php
 					     <?php
                             include 'header.php';
                          ?> 
+=======
+					<div id="logo"><a href="greetingpage.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1:room.html
 
 				</div>
 			</nav>		
 				
 		<div class="row">
 			<div class="col-lg-12">	
+<<<<<<< HEAD:room.php
 				 <?php
                             include 'headbutton.php';
                   ?> 
+=======
+					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
+					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
+					<button type="button" class="log" onclick="window.location.href='login.php'"><a href="login.php" class="nav">Log In</a></button>
+		  </div>
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1:room.html
 
 		  <div class="room">
 				<div class="solo">

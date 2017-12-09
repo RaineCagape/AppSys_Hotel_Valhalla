@@ -165,6 +165,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	<div class="container">
 
+<<<<<<< HEAD
 		          <nav>
                 <div class="header">    
                          <?php
@@ -181,6 +182,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   ?> 
 
 
+=======
+				<div class="header">	
+					<div id="logo"><a href="greetingpage.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12">	
+					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
+					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
+					<button type="button" class="log" onclick="window.location.href='login.php'"><a href="login.php" class="nav">Log In</a></button>
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 				<div class="contDate">
 					<h1 class="topLabel">Register</h1>
 					<h5 class="subLabel">To manage your bookings, register to create an online account. An easy platform to review pass stays, access to manage your current reservations.</h5>
@@ -225,11 +237,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			</div>
 
 				<div class="footer">
+<<<<<<< HEAD
 					  		
 
                         <?php
                             include 'footer.php';
                          ?> 
+=======
+					  		<div class="footerinfo">
+								<h3 class="footerheaders">Contact Us</h3>
+											  			
+								<h5 class="info">Inigo St., Bo. Obrero, </br>Davao City, 8000</h5>
+
+								<h5 class="info">+628-6787</h5>
+
+								<h5 class="info">+09271891299</h5>
+
+								<h5 class="info">E-mail us at </br> hotelvalhalla@gmail.com</h5>
+
+								<div class ="aboutus">
+									<h3 class="footerheaders">About Hotel Valhalla</h3>
+
+									<h5 class="info">Hotel Valhalla is owned by the BCR group </br> of companies- a company specializing in hotel </br> and restaurant management. The hotel aims </br>  to house guests in a rustic viking-esque atmosphere </br>  for a one of a time experience that will surely be </br> remembered.</h5>
+
+								</div>	
+
+								<div class="sponsors">
+									<h3 class="footerheaders">In Partnership with</h3>
+
+									<img src="images/vikingslogo.png" class="vikings">
+								</div>
+							</div>	
+
+>>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 
 				</div>		
 	</div>
