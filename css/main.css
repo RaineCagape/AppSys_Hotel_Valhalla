@@ -2,7 +2,7 @@ body{
 	overflow-x: hidden;
 	position: absolute;
 	width: 100%;
-	background-color: black;
+	background-image: url("cssimages/bglogin.png"); 
 
 }
 
@@ -18,6 +18,93 @@ body{
 	left: -90px;
 }
 
+.row{
+  width: 100%;
+  min-width: 1349px;
+
+}
+
+.header{
+	background-image: url("cssimages/header.png");
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	height: 60px;
+	width: 110%;
+	min-width: 1000px;
+	padding: 5px 10px;
+}
+
+.article1{
+	position: absolute;
+	top: 850px;
+	left: 0px;
+	height: 870px;
+	width: 1335px;
+	margin: 5px;
+	border-top: solid;
+	border-bottom: solid;
+	border-color: #CFB53B;
+  	border-width: 1px;
+}
+
+img.viking{
+	position: absolute;
+	margin: 10px;
+	top: 5px;
+	left: 10px;
+}
+
+img.viking:hover{
+	transform: scale(1.1);
+	-webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+h1.labelart{
+	font-family: century gothic;
+	position: absolute;
+	top: 0px;
+	left: 700px;
+	color: #CFB53B;
+}
+
+
+img.viking2{
+	position: absolute;
+	margin: 10px;
+	top: 430px;
+	left: 10px;
+}
+
+
+img.viking2:hover{
+	transform: scale(1.1);
+	-webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.article2{
+	position: absolute;
+	border-top: solid;
+	border-color: #CFB53B;
+  	border-width: 1px;
+	height: 730px;
+	width: 650px;
+	margin: 50px;
+	top: 40px;
+	left: 600px;
+	padding:  10px 20px;
+}
+
+h5.vikinginfo{
+	font-family: century gothic;
+	position: absolute;
+	color: white;
+	line-height: 25px;
+}
 
 .gif{
 	font-family: century gothic;
@@ -35,42 +122,18 @@ body{
 	position: absolute;
 }
 
-.article1{
-	
-	background-color: #333333;
-	height: 295px;
-	width: 100%;
-	top: 813px;
-	left: 0px;
-	border-style: dashed;
-	border-width: 2px;
-	border-color: white;
-	padding: 10px 10px;
-	box-shadow: 10%;
-}
-
-.article2{
-	
-	background-color: #000000;
-	height: 295px;
-	width: 100%;
-	top: 1105px;
-	left: 0px;
-	border-style: dashed;
-	border-width: 2px;
-	border-color: white;
-	padding: 10px 10px;
-}
-
 .footer{
 	
 	background-color: black;
 	height: 250px;
 	width: 100%;
 	min-width: 1000px;
-	bottom: -5000px;
+	bottom: -2000px;
 	left: 0px;
 	position: absolute;
+	border-top: solid;
+  	border-color: #CFB53B;
+  	border-width: 1px;
 }
 
 #images{

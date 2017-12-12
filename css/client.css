@@ -36,23 +36,6 @@ body{
   padding: 5px 10px;
 }
 
-
-.booking{
-  width: 150px;
-  height: 40px;
-  background-color: #CFB53B;
-  border-style: hidden;
-  border-radius: 5px;
-  font-family: century gothic;
-  font-size: 20px;
-  color: white;
-  right: 350px;
-  top: 7px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute; 
-}
-
 .dp{
   height: 200px;
   width: 200px;
@@ -73,7 +56,7 @@ h2.fullname{
   width: 768px;
   height: 300px;
   position: absolute;
-  top: 170px;
+  top: 150px;
   left: 350px;
   padding: 20px;
 }
@@ -92,7 +75,6 @@ h2.infolabel{
   top: 330px;
   left: 350px;
 }
-<<<<<<< HEAD
 
 h5.warning{
   font-family: century gothic;
@@ -104,95 +86,6 @@ h5.warning{
 }
 
 .policies{
-=======
-
-h5.warning{
-  font-family: century gothic;
-  color: white;
-  padding: 5px;
-  position: absolute;
-  top: 380px;
-  left: 350px;
-}
-
-.policies{
-  position: absolute;
-  width: 900px;
-  height: 970px;
-  top: 430px;
-  left: 330px;
-  margin: 10px;
-}
-
-.privacy{
-  border-top: solid;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: #CFB53B;
-  position: absolute;
-  width: 870px;
-  height: 300px;
-  top: 10px;
-  left: 10px;
-  overflow-y: auto;
-}
-
-h3.policylabel{
-  font-family: century gothic;
-  color: #CFB53B;
-  padding: 0px 15px;
-}
-
-h5.policyinfolabel{
-  font-family: century gothic;
-  color: #CFB53B;
-  padding: 10px;
-  margin: 5px;
-  
-}
-
-h5.policyinfo{
-  font-family: century gothic;
-  color: white;
-  padding: 10px;
-  margin: 5px;
-
-}
-
-.payment{
-   border-top: solid;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: #CFB53B;
-  position: absolute;
-  width: 870px;
-  height: 300px;
-  top: 330px;
-  left: 10px;
-  overflow-y: auto;
-}
-
-.cancel{
-   border-top: solid;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: #CFB53B;
-  position: absolute;
-  width: 870px;
-  height: 300px;
-  top: 650px;
-  left: 10px;
-}
-
-
-.footer{
-  background-color: black;
-  height: 250px;
-  width: 100%;
-  min-width: 1000px;
-  bottom: -1800px;
-  left: 0px;
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
   position: absolute;
   width: 900px;
   height: 970px;
@@ -218,17 +111,11 @@ h5.policyinfo{
   overflow-y: auto;
 }
 
-<<<<<<< HEAD
 #style-2::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: 10px;
   background-color: #F5F5F5;
-=======
-.footerinfo{
-  height: 250px;
-  padding: 20px;
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 }
 
 #style-2::-webkit-scrollbar
@@ -263,11 +150,12 @@ h5.policyinfo{
   color: white;
   padding: 10px;
   margin: 5px;
+  line-height: 25px;
 
 }
 
 .payment{
-   border-top: solid;
+  border-top: solid;
   border-bottom: solid;
   border-width: 1px;
   border-color: #CFB53B;

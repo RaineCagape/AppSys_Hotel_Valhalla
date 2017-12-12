@@ -12,17 +12,9 @@
 	}
 
 	$username = $_SESSION['username'];
-<<<<<<< HEAD:book.php
 
 ?>
 
-=======
-	$
-
-?>
-
-
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1:book.php
 <html>
 <head>
 	<title>Book a Room | Hotel Valhalla</title>

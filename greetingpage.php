@@ -1,10 +1,12 @@
 
+<?php
+	session_start();
+?>
 
 <html>
 <head>
 	<title>Hotel Valhalla</title>
 	<link rel="icon" href="images/logo.png">
-	<script type="text/javascript" src='scripts.js'> </script>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,16 +29,10 @@
 				
 		<div class="row">
 			<div class="col-lg-12">	
-<<<<<<< HEAD:greetingpage.php
 				 <?php
                             include 'headbuttonnotin.php';
                   ?> 
 
-=======
-					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
-					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
-					<button type="button" class="log" onclick="window.location.href='login.php'"><a href="login.php" class="nav">Log In</a></button>
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1:greetingpage.php
 				<div class="slideshow">
 		 
 		  				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -46,7 +42,6 @@
 						      <li data-target="#myCarousel" data-slide-to="1"></li>
 						      <li data-target="#myCarousel" data-slide-to="2"></li>
 						    </ol>
-
 						    
 						    <div class="carousel-inner">
 						      <div class="item active">
@@ -75,6 +70,23 @@
 					
 					</div>
 
+					   <div class="article1">
+				  	   		<h1 class="labelart"> Vikings- A Feast From the Sea</h1>
+				  	    	<img src="images/vikings.jpg" class="viking">
+				  	    	<img src="images/vikings-5.jpg" class="viking2">
+				  	    	
+				  	    	<div class="article2">
+				  	    		<h5 class="vikinginfo">
+				  	    		In partnership with Vikings PH, Hotel Valhalla brings to you the feast from the nine realms and across the seven seas.</br></br> 
+
+								Our dining hall consists of food that can satisfy even the gods themselves. We’ve got pizza’s from Italy, sushi from Japan, dim sum from china, cakes from France, salsas from Mexico, and even the very own delicacies of the Pearl of the Orient Seas. Surely, you will satisfy your inner cravings, and find every food your mind can imagine- all in the comfort of the hotel premises. No need to drive to the nearest mall and locate the buffet, it’s all here in Hotel Valhalla, waiting for you!</br></br> 
+
+								Now, unleash your inner Viking, and feast like you are about to face Ragnarok!</h5>
+
+
+				  	    	</div>
+				  	    </div>
+
 				</div>
 		  </div>
 					  	<div class="footer">
@@ -83,6 +95,7 @@
                             include 'footer.php';
                          ?> 
 					  	</div>
+
 
 		</div>	
 

@@ -57,13 +57,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION['lastname'] = $lname;
 
                             header("location: index.php");
-<<<<<<< HEAD
                         } 	
 
                         else{
-=======
-                        } 	else{
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
                             // Display an error message if password is not valid
 						$password_err = 'Invalid Password.';
                         }
@@ -107,7 +103,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 	<div class="container">
 
-<<<<<<< HEAD
 		   <nav>
                 <div class="header">    
                          <?php
@@ -123,17 +118,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             include 'headbuttonnotin.php';
                   ?> 
 
-=======
-				<div class="header">	
-					<div id="logo"><a href="greetingpage.html"><img src="images/logo2.png" style="height: 100px"/></a></div>
-				</div>
-				
-				<div class="row">
-					<div class="col-lg-12">	
-					<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
-					<button type="button" class="rooms" onclick="window.location.href='room.html'"><a href="room.html" class="nav">Accomodations</a></button>
-					<button type="button" class="log" onclick="window.location.href='login.php'"><a href="login.php" class="nav">Log In</a></button>
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 
 				<div class="contDate">
 					<h1 class="topLabel">LOG IN</h1>
@@ -163,16 +147,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				</div>
 			</div>
 
-<<<<<<< HEAD
 				<div class="footer">
         
                         <?php
                             include 'footer.php';
                          ?>             
                 </div>			
-=======
-				<div class="footer"></div>			
->>>>>>> 8ad4fd45cf3ba0c37123b5ccfc8f5c3e5940efc1
 	</div>
 
 	

@@ -1,3 +1,19 @@
+<?php 
+	
+	include 'config.php';
+
+	session_start();
+
+	if(!isset($_SESSION['username'])|| empty($_SESSION['username'])){
+
+		header("location:login.php");
+
+		exit;
+	}
+
+	$username = $_SESSION['username'];
+
+?>
 
 <html>
 <head>
@@ -38,6 +54,7 @@
 							<h4 class="user">Check-in Date: </h4>
 							<h4 class="user">Check-out Date: </h4>
 							<h4 class="user">Room Type: </h4>
+							<h4 class="user">Room Number: </h4>
 
 						</div>		
 
@@ -49,63 +66,60 @@
 						<div class="policies">
 							<div class="privacy">
 								<h3 class="policylabel">Privacy Policy</h3>
-								<h5 class="policyinfo">This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website. </h5>
+								<h5 class="policyinfo">THotel Valhalla respects the privacy of all our customers and business partners, and treats all personal information as confidential.  We pledge to fully comply with the requirements of the Personal Data (Privacy) Ordinance of the Philippines and internationally recognized standards of personal data privacy protection</h5>
 
-								<h5 class="policyinfolabel">What personal information do we collect from the people that visit our blog, website or app? </h5>
+								<h5 class="policyinfolabel">Our Commitment to Protect Personal Data Privacy</h5>
 
-								<h5 class="policyinfo">When ordering or registering on our site, as appropriate, you may be asked to enter your name, email address or other details to help you with your experience. </h5>
+								<h5 class="policyinfo">This Personal Data Privacy Policy applies to personal data and information regarding guests and other individuals with whom we do business with and to the management of that data and information in any form, whether electronic or written. </br></br> This Policy gives effect to our commitment and dedication to protect your personal information.</h5>
 
-								<h5 class="policyinfolabel">When do we collect information? </h5>
+								<h5 class="policyinfolabel">Collection of Personal Information</h5>
 
-								<h5 class="policyinfo">We collect information from you when you register on our site, fill out a form or enter information on our site. </h5>
+								<h5 class="policyinfo">The term “personal data” in this Policy refers to personal information which we, in the process of providing you with a particular and excellent service, may ask you to voluntarily supply to us.  Personal data may be collected as part of but not limited to:</br></br>
+ 
+								(i)   Fulfilling reservations or requests for information or services,</br>
+								(ii)  Facilitating communications.
+ 
+								</h5>
 
-								<h5 class="policyinfolabel">How do we use your information?</h5>
+								<h5 class="policyinfolabel">Types of Personal Information We Collect</h5>
 
-								<h5 class="policyinfo">We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:</br></br>
-								      * To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.</br></br>
-								      * To improve our website in order to better serve you.</br></br>
-								      * To allow us to better service you in responding to your </br></br>customer service requests.</br></br>
-								      * To quickly process your transactions.</h5>
+								<h5 class="policyinfo">
+								The types of personal data that we collect may include:<br></br>
+								      Name, username, check-in date, check-out date, contact details (limited to email address, profile or password.</h5>
 
-								<h5 class="policyinfolabel">How do we protect your information?</h5>
+								<h5 class="policyinfolabel">How We Use Personal Information</h5>
 
-								<h5 class="policyinfo">We do not use vulnerability scanning and/or scanning to PCI standards.
-								We only provide articles and information. We never ask for credit card numbers.</br></br>
-								We do not use Malware Scanning.</br></br>
-								We do not use an SSL certificate</br></br>
-								      * We only provide articles and information. We never ask for personal or private information like names, email addresses, or credit card numbers.</h5>
+								<h5 class="policyinfo">We may use and disclose relevant portions of your personal data and information in order to:</br></br>
+									Provide, manage and administer our services, provide you with customer service and respond to your requests, enable us to operate our business efficiently and sustainably, provide for the safety and security of staff, guests and other visitors.</h5>
 
 
 								<h5 class="policyinfolabel">Third-party disclosure</h5>
 
 								<h5 class="policyinfo">We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information.</h5>
 
-								<h5 class="policyinfolabel">Third-party links</h5>
+								<h5 class="policyinfolabel">Direct Marketing</h5>
 
-								<h5 class="policyinfo">We do not include or offer third-party products or services on our website.</h5>
+								<h5 class="policyinfo">We will not use your personal data for direct marketing or transfer your personal data and information (whether within or outside the Philippines) to any third parties for direct marketing purpose without obtaining your consent.</h5>
 
-								<h5 class="policyinfolabel">We have implemented the following:</h5>
+								<h5 class="policyinfolabel">Processing of Personal Information</h5>
 
-								<h5 class="policyinfolabel">COPPA (Children Online Privacy Protection Act)</h5>
+								<h5 class="policyinfo">Whenever your personal data is transferred within Hotel Valhalla, your personal data will be processed in accordance with the terms and conditions of this Policy.</h5>
 
-								<h5 class="policyinfo">When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.</br></br>
-								We do not specifically market to children under the age of 13 years old.</h5>
+								<h5 class="policyinfolabel">Disclosure of Your Personal Information</h5>
 
-								<h5 class="policyinfolabel">Fair Information Practices</h5>
+								<h5 class="policyinfo">From time to time, we may disclose and transfer your personal data and information.  The recipients of any such data are under obligation to protect your personal information.</br></br>
+ 
+								We reserve the right to disclose any personal data or information to comply with the law, or accounting and tax rules and regulations, or to protect or defend our rights or properties.</br></br>
+								 
+								We also reserve the right to use any information in emergency situations and informing your immediate family members of the situation.</br></br>
+								 
+								The personal data which we collect will not be sold to any third party at any time.</h5>
 
-								<h5 class="policyinfo">The Fair Information Practices Principles form the backbone of privacy law in the United States and the concepts they include have played a significant role in the development of data protection laws around the globe. Understanding the Fair Information Practice Principles and how they should be implemented is critical to comply with the various privacy laws that protect personal information.</h5>
+								<h5 class="policyinfolabel">Changes to the Policy</h5>
 
-								<h5 class="policyinfo">In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur:</br></br>
-								We will notify you via email</br></br>
-								      * Within 7 business days</br></br>
-								We will notify the users via in-site notification</br></br>
-								      * Within 7 business days</h5>
-
-								<h5 class="policyinfo">We also agree to the Individual Redress Principle which requires that individuals have the right to legally pursue enforceable rights against data collectors and processors who fail to adhere to the law. This principle requires not only that individuals have enforceable rights against data users, but also that individuals have recourse to courts or government agencies to investigate and/or prosecute non-compliance by data processors.</h5>
-
-								<h5 class="policyinfo">If at any time you would like to unsubscribe from receiving future emails, you can email us at</br></br>
-								      * Follow the instructions at the bottom of each email.
-								and we will promptly remove you from ALL correspondence.
+								<h5 class="policyinfo">Hotel Valhalla reserves full rights to amend or update this Policy unilaterally from time to time as it sees fit. Any changes to this Policy will be posted to our website so that you are always informed of the way we collect and use your personal data.  Updated versions of our Policy will include the date of the version at the end of this Policy so that you are able to check when the Policy was last emended.</br></br>
+ 
+								Any changes to our Policy will become effective upon posting of the revised Policy on the website. Use of the website following such changes constitutes your acceptance of the revised Policy then in effect.
 								</h5>
 
 							</div>	
@@ -117,9 +131,6 @@
  
 								<h5 class="policyinfolabel">Checks and Check Caching</h5>
 								<h5 class="policyinfo">We do not accept checks.  We do not provide check cashing services.</h5>
-								 
-								<h5 class="policyinfolabel">Debit Card/Credit Card Holders</h5>
-								<h5 class="policyinfo">Your credit card is not valid unless signed.  We will refuse an unsigned card.  Your Debit or Credit Card will be pre-authorized at check-in for the full amount of your stay.  The pre-authorization will HOLD the funds until check-out, at which time the amount actually incurred during your stay will be charged.  If you change your method of payment at check-out or change the length of your stay, your bank may not post the changes to your account immediately.  Hotel Valhalla has no control over the policies of your bank and will not be held liable for any “insufficient funds” penalties or any other resulting fees or charges.  It is your responsibility to fully understand the manner in which your bank processes pre-authorizations and charges to your debit or credit card.  Some banks hold pending authorizations for up to 30 days. </h5>
 								 
 								<h5 class="policyinfolabel">Deposits and Guarantees</h5>
 								<h5 class="policyinfo">There is no deposit required to make an individual room reservation.  However, a major credit card is required at the time of booking to guarantee the room and secure the reservation period.</h5>
