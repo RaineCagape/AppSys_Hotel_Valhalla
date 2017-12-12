@@ -11,7 +11,9 @@
 		exit;
 	}
 
-	$username = $_SESSION['username'];
+	$fname = $_SESSION['firstname'];
+	$lname = $_SESSION['lastname'];
+	$completeName = $fname.' '.$lname;
 
 ?>
 
@@ -49,7 +51,7 @@
 					<div class="profilepic">
 						<img src="images/user.png" class="dp"> 
 
-						<h2 class="fullname">Mr. Ravioli Ravioli Please Let Me Pass This Semesterioli</h2>
+						<h2 class="fullname"><?php echo $completeName ?></h2>
 						<div class="otherinfo">
 							<h4 class="user">Check-in Date: </h4>
 							<h4 class="user">Check-out Date: </h4>
