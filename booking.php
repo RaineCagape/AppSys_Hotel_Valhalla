@@ -12,22 +12,17 @@
 	}
 
 	$username = $_SESSION['username'];
-
-	$checkIn = $checkOut = $reservation = $roomType ="";
-	$check_err = $reservation_err = $roomType_err ="";
-
+// 
+	$checkIn = $checkOut = $reservation = $roomType = $clientId =  "";
+	$check_err =  $reservation_err = $roomType_err ="";
+	
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
+         $date1 = $_POST['dayStart'];
+         $date2 = $_POST['dayEnd'];
 
-
-        $_SESSION['checkin_date'] = $_POST["dayStart"];
-        $_SESSION['checkout_date'] = $_POST["dayEnd"];
-
-         $date1 = date($_POST["dayStart"]);
-         $date2 = date($_POST["dayEnd"]);
-
-        if(strtotime($date1) < strtotime($date2)){
+        if(strtotime($date1) > strtotime($date2)){
 
           $check_err = "Check-out date should not contradict with Check-in date";
         }
@@ -60,7 +55,7 @@
 
         }
         elseif ($_POST["roomType"] == "king") {
-        	$roomType = "king";
+        	$roomType = "kingr";
 
         }
         elseif ($_POST["roomType"] == "suite") {
@@ -69,43 +64,40 @@
 	    }
 	    elseif ($_POST["roomType"] == "penthouse") {
         	$roomType = "penthouse";
-
         }
 
-        elseif (empty(trim($_POST["roomType"]) )){
+        elseif (empty(trim($_POST["roomType"]))){
         	$roomType_err = "Please Select";
         }
+		
+		 $clientId = $_SESSION['id'];
 
 
-     if(empty($check_err) && empty($reservation_err) && empty($roomType_err)){
+     	if(empty($check_err) && empty($reservation_err) && empty($roomType_err)){
 
-     	$sql ="INSERT INTO reservation (check_in, check_out, reserve_name, room_type, clientId) VALUES ( FROM_UNIXTIME(?),FROM_UNIXTIME(?),?,?,?)";
+	     	$sql = " INSERT INTO reservation (check_in, check_out, reserve_name, room_type, clientId) VALUES ('$checkIn','$checkOut','$reservation','$roomType','$clientId') ";
 
-     	if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, 'i,i,s,s,i', $param_checkIn, $param_checkOut,$param_reserve,$param_roomType,$param_clientId);
+	     	if(mysqli_query($link, $sql)){
 
-            $param_checkIn = $checkIn;
-            $param_checkOut = $checkOut;
-            $param_reserve = $reservation;
-            $param_roomType = $roomType;
-            $param_clientId = $_SESSION['id'];
+	               header("location: clientprofile.php");
+	            } 	
 
-		 }
+			else{
+		         
+		          ?>
+           			 <script type="text/javascript">
+           			 alert('Error occured while inserting your data');
+            		</script>
+            	  <?php
 
-		 else{
-                echo "Something went wrong. Please try again later.";
-            }
-        }
+				}
 
-        // Close statement
-        mysqli_stmt_close($stmt);
+
+		}
+	           
     }
 
-    // Close connection
-    mysqli_close($link);
-
-							  
+	  
 ?>
 
 <html>
@@ -119,8 +111,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+	<script type="text/javascript">
 
+	   window.setTimeout(function() {
+	    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+	        $(this).remove();  });}, 4000);
+
+
+	</script>
+
+<body>
 	
 	<div class="container">
 
@@ -147,28 +147,30 @@
 
 						<form action="<?php echo htmlspecialchars ($_SERVER['PHP_SELF']); ?> " id="form" method="post" >	
 							
-						<div class="form-group <?php echo (!empty($check_err)) ? 'has-error' : ''; ?>">
+						<div class="form-group <?php echo (!empty($check_err)) ? 'has-error' : ''; ?>">	
+
+							<div class="alert alert-danger" data-dismiss="alert" id="alert" role="alert" style="width:500px; font-size: 13px; margin-top: -55px; padding-bottom: 10px;"><?php echo $check_err; ?></div>
+
 							<div class="datestart" >
 								<h4 class="begin">Check-in Date</h4>
-								<input type="date" name="dayStart" id="dayStart" class="start" required/>
-							</div><label></label>
-
+								<input type="date" name="dayStart" id="dayStart" class="start" value="<?php echo $checkIn;?>" required/>
+							</div>
+							
 							<div class="dateend">
 								<h4 class="stop">Check-out Date</h4>
-								<input type="date" name="dayEnd" id="dayEnd" class="end" required>
+								<input type="date" name="dayEnd" id="dayEnd" class="end" value="<?php echo $checkOut;?>"  required>
 							</div>
-							<span ><?php echo $check_err; ?></span>
-
+							
 						</div>
 
 							<div class="reservename">
 								<h4 class="reserveNme">Reservation Name</h4>
-								<input type="text" name="rname" id="rname" class="resname" placeholder="Enter Name" required>
+								<input type="text" name="rname" id="rname" class="resname" value="<?php echo $reservation?>" placeholder="Enter Name" required>
 							</div>
-
+<!-- name="text" -->
 							<div class="roomType">
 								<h4 class="roomLabel">Room Type</h4>
-								<select name="text" name="roomType" id="room" class="room" required>
+								<select  name="roomType" id="roomType" class="room" required>
 									  <option value="" disabled selected>--Select Room Type--</option>
 									  <option value="solo">Modgud's Gjoll Solo Deluxe</option>
 									  <option value="twin">Freyr and Freya's Twin Double Bed Deluxe</option>

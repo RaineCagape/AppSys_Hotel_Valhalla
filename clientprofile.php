@@ -13,6 +13,7 @@
 
 	$fname = $_SESSION['firstname'];
 	$lname = $_SESSION['lastname'];
+	$id = $_SESSION['id'];
 	$completeName = $fname.' '.$lname;
 
 ?>
@@ -53,10 +54,45 @@
 
 						<h2 class="fullname"><?php echo $completeName ?></h2>
 						<div class="otherinfo">
-							<h4 class="user">Check-in Date: </h4>
-							<h4 class="user">Check-out Date: </h4>
-							<h4 class="user">Room Type: </h4>
-							<h4 class="user">Room Number: </h4>
+					
+					<?php 
+
+						$sql = " SELECT reserve_name, check_in, check_out, room_type  FROM reservation WHERE clientId = ('$id') ORDER BY id DESC";
+
+						$result = mysqli_query($link,$sql);
+
+						if(mysqli_num_rows($result)>0){
+
+
+							while($row =mysqli_fetch_array($result)){
+
+							$reservation =$row['reserve_name'];
+							$check_in =$row['check_in'];
+							$check_out = $row['check_out']; 
+							$room_type = $row['room_type'];
+
+					?>
+				
+						
+							<br><h4 class="user">Reservation Name: <br><?php echo $reservation; ?></h4>
+							<h4 class="user">Check-in Date: <?php echo $check_in;  ?> </h4>
+							<h4 class="user">Check-out Date:<?php echo $check_out; ?></h4>
+							<h4 class="user">Room Type: <?php echo $room_type; ?></h4>
+						
+					<?php 
+
+							}
+							mysqli_free_result($result);
+
+						}
+
+						// else{
+
+						// 	echo '';
+
+						// }
+
+					?>
 
 						</div>		
 
@@ -68,7 +104,7 @@
 						<div class="policies">
 							<div class="privacy">
 								<h3 class="policylabel">Privacy Policy</h3>
-								<h5 class="policyinfo">THotel Valhalla respects the privacy of all our customers and business partners, and treats all personal information as confidential.  We pledge to fully comply with the requirements of the Personal Data (Privacy) Ordinance of the Philippines and internationally recognized standards of personal data privacy protection</h5>
+								<h5 class="policyinfo">Hotel Valhalla respects the privacy of all our customers and business partners, and treats all personal information as confidential.  We pledge to fully comply with the requirements of the Personal Data (Privacy) Ordinance of the Philippines and internationally recognized standards of personal data privacy protection</h5>
 
 								<h5 class="policyinfolabel">Our Commitment to Protect Personal Data Privacy</h5>
 
