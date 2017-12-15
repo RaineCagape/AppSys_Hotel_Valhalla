@@ -21,6 +21,7 @@
 
 ?>
 
+
 <html>
 <head>
 	<title>Your Profile | Hotel Valhalla</title>
@@ -31,6 +32,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
 	
 
@@ -139,9 +142,9 @@
 							<h4 class="user">Check-out Date: <?php echo $check_out; ?></h4>
 							<h4 class="user">Room Type: <?php echo  $roomName; ?></h4>
 							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?>.00</h4>
-							<form action="cancelbooking.php">
-								<input type="submit" name="btnLogin" id="btn" value="Cancel Booking"/>
-							</form>
+
+								<button type="button" class="btn " data-toggle="modal" data-target="#Confirm" style="float: right; margin-top: -50px;">Cancel Booking</button>  
+						
 						
 					<?php 
 
@@ -159,7 +162,30 @@
 
 					?>
 
-						</div>		
+						</div>	
+
+
+					  <div class="modal fade" id="Confirm" role="dialog">
+    							<div class="modal-dialog">
+    
+      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 class="modal-title">Modal Header</h4>
+						        </div>
+						        <div class="modal-body">
+						          <p>Some text in the modal.</p>
+						        </div>
+						        <div class="modal-footer">
+						          <button type="button" class="btn btn-default" onclick="window.location.href='cancelbooking.php'" data-dismiss="modal">Yes</button>
+						          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+						        </div>
+						      </div>
+						      
+						    </div>
+						  </div>
+
 
 							<h2 class=infolabel>Hotel Valhalla Policies</h2>
 							<h5 class="warning">This company had set policies to protect both your and our interests. We advise you to take a minute of your time and read them carefully.</h4>
