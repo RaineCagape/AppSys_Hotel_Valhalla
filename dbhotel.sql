@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2017 at 07:27 AM
+-- Generation Time: Dec 15, 2017 at 03:39 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -41,7 +41,8 @@ CREATE TABLE `account` (
 
 INSERT INTO `account` (`id`, `username`, `password`, `fname`, `lname`, `email`) VALUES
 (12, 'neil', '$2y$10$UixSJ7p5Idxx0XU1DLBzauShozeP4DLpFe9MU5jwX4j9QxDI6rN/i', 'Aaron', 'Minyard', 'aaron@gmail.com'),
-(11, 'andrew', '$2y$10$DWzY.hK/P6hrJPJZ/KJwI.NupvlCzYMkgNrNvuKKIjuRP5JVB2Y1W', 'Andrew', 'Minyard', 'andmin@gmail.com');
+(11, 'andrew', '$2y$10$DWzY.hK/P6hrJPJZ/KJwI.NupvlCzYMkgNrNvuKKIjuRP5JVB2Y1W', 'Andrew', 'Minyard', 'andmin@gmail.com'),
+(13, 'rcagape', '$2y$10$w/6CX4noNUkGCcxfql6kx.jGP2inGMu/enzQzC7rqHWC83x1xIFry', 'Reyna', 'Cagape', 'istolealoafofbread24601@lesmis.com');
 
 -- --------------------------------------------------------
 
@@ -54,7 +55,8 @@ CREATE TABLE `reservation` (
   `check_in` date NOT NULL,
   `check_out` date NOT NULL,
   `reserve_name` varchar(200) NOT NULL,
-  `room_type` varchar(400) NOT NULL,
+  `room_id` int(20) NOT NULL,
+  `room_rate` int(11) NOT NULL,
   `clientId` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -62,8 +64,32 @@ CREATE TABLE `reservation` (
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `check_in`, `check_out`, `reserve_name`, `room_type`, `clientId`) VALUES
-(3, '2017-12-13', '2017-12-16', 'WORK! WORK!', 'queen', 11);
+INSERT INTO `reservation` (`id`, `check_in`, `check_out`, `reserve_name`, `room_id`, `room_rate`, `clientId`) VALUES
+(21, '2017-12-01', '2017-12-02', 'WORK! WORK!', 2, 3500, 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rooms`
+--
+
+CREATE TABLE `rooms` (
+  `roomName` varchar(500) NOT NULL,
+  `roomType` varchar(100) NOT NULL,
+  `roomId` int(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rooms`
+--
+
+INSERT INTO `rooms` (`roomName`, `roomType`, `roomId`) VALUES
+('Modgud\'s Gjoll Solo Deluxe', 'solo', 1),
+('Freyr and Freya\'s Twin Double Bed Deluxe', 'twin', 2),
+('Frigg\'s Throne and Boudoir', 'queen', 3),
+('Odin\'s Throne and Bedchamber', 'king', 4),
+('Idun\'s Garden and Suite', 'suite', 5),
+('Heimdall\'s Rainbow Bridge Penthouse', 'penthouse', 6);
 
 --
 -- Indexes for dumped tables
@@ -83,6 +109,12 @@ ALTER TABLE `reservation`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indexes for table `rooms`
+--
+ALTER TABLE `rooms`
+  ADD UNIQUE KEY `roomId` (`roomId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -90,12 +122,12 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
