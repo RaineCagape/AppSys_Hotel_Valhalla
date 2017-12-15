@@ -35,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 }
 
                  else{
+                    
                     $username = trim($_POST["username"]);
                 }
             }
@@ -122,6 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION['firstname'] = $fname; 
                 $_SESSION['lastname'] = $lname;
                 $_SESSION['email'] = $email;
+                $_SESSION['Warning'] = "";
 
                 // Redirect to login page
                 header("location: index.php");

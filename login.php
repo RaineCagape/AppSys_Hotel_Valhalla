@@ -57,6 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION['lastname'] = $lname;
                             $_SESSION['email'] = $email;
                             $_SESSION['id'] = $id;
+                            $_SESSION['Warning'] = "";
 
                             header("location: index.php");
                         } 	

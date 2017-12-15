@@ -4,7 +4,7 @@
 </head>
 <body>
 
-			<button type="button" class="booking" onclick="window.location.href='booking.php'"> <a href="booking.php" class="nav">Book a Room<br></a></button>
+			<button type="button" class="booking" onclick="window.location.href='login.php'"> <a href="login.php" class="nav">Book a Room<br></a></button>
 			<button type="button" class="rooms" onclick="window.location.href='room2.php'"><a href="room2.php" class="nav">Accomodations</a></button>
 			<button type="button" class="log" onclick="window.location.href='login.php'"><a href="login.php" class="nav">Log In</a></button>
 </body>

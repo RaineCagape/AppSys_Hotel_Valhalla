@@ -11,10 +11,13 @@
 		exit;
 	}
 
+	
+
 	$fname = $_SESSION['firstname'];
 	$lname = $_SESSION['lastname'];
 	$id = $_SESSION['id'];
 	$completeName = $fname.' '.$lname;
+
 
 ?>
 
@@ -29,7 +32,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+	
 
+ 
 <body>
 
 	<div class="container">
@@ -48,16 +53,41 @@
 				 <?php
                             include 'headbutton.php';
                   ?> 
+				
+				<?php
 
-					<div class="profilepic">
+				if(isset($_SESSION['Warning'])||!empty($_SESSION['Warning'])){ 
+
+					$warning = "<b>Note: </b>You Can only apply for reservation once";
+
+				?>
+				<script type="text/javascript">
+	 			  window.setTimeout(function() {
+	  				  $(".alert").fadeTo(500, 0).slideUp(500, function(){
+	       			  $(this).remove();  });}, 5000);
+				</script>
+
+				<div class="alert alert-danger" data-dismiss="alert" id="alert" role="alert" style="width:1000px; font-size: 13px; margin-top: 70px; margin-left: 270px; padding-bottom: 10px;"><?php echo $warning; ?></div>
+
+
+				<?php
+
+		
+				}
+					 unset($_SESSION['Warning']);
+				?>
+					
+
+
+						<div class="profilepic">
 						<img src="images/user.png" class="dp"> 
 
-						<h2 class="fullname"><?php echo $completeName ?></h2>
+						<h2 class="fullname"><?php echo $completeName; ?></h2>
 						<div class="otherinfo">
 					
 					<?php 
 
-						$sql = " SELECT reserve_name, check_in, check_out, room_type  FROM reservation WHERE clientId = ('$id') ORDER BY id DESC";
+						$sql = " SELECT reserve_name, check_in, check_out, room_type, room_rate  FROM reservation WHERE clientId = ('$id') ORDER BY id DESC";
 
 						$result = mysqli_query($link,$sql);
 
@@ -70,27 +100,59 @@
 							$check_in =$row['check_in'];
 							$check_out = $row['check_out']; 
 							$room_type = $row['room_type'];
+							$room_rate = $row['room_rate'];
+
+							if($room_type == "solo"){
+
+					        	 $roomName = "Modgud's Gjoll Solo Deluxe";
+					        }
+					        elseif ($room_type == "twin") {
+					        	
+					        	$roomName = "Freyr and Freya's Twin Double Bed Deluxe";
+
+					        }
+					        elseif ($room_type == "queen") {
+					        
+					        	$roomName = "Frigg's Throne and Boudoir";
+
+					        }
+					        elseif ($room_type == "king") {
+					        	
+					        	$roomName = "Odin's Throne and Bedchamber";
+
+					        }
+					        elseif ($room_type == "suite") {
+					   
+					        	 $roomName = "Idun's Garden and Suite";
+						    }
+						    elseif ($room_type == "penthouse") {
+					        	
+					        	$roomName = "Heimdall's Rainbow Bridge Penthouse";
+					        }
+
 
 					?>
 				
 						
-							<br><h4 class="user">Reservation Name: <br><?php echo $reservation; ?></h4>
+							<h4 class="user">Reservation Name: <b style="font-size: 20px;"><?php echo strtoupper($reservation); ?><b></h4>
 							<h4 class="user">Check-in Date: <?php echo $check_in;  ?> </h4>
-							<h4 class="user">Check-out Date:<?php echo $check_out; ?></h4>
-							<h4 class="user">Room Type: <?php echo $room_type; ?></h4>
+							<h4 class="user">Check-out Date: <?php echo $check_out; ?></h4>
+							<h4 class="user">Room Type: <?php echo  $roomName; ?></h4>
+							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?></h4> 
 						
 					<?php 
 
 							}
 							mysqli_free_result($result);
 
+
 						}
 
-						// else{
+						 else{
 
-						// 	echo '';
+							echo '<h4 class="user" style="margin-top: 50px; "><p style="text-align: center" ;>You Have No Transaction Yet</p></h4>';
 
-						// }
+						}
 
 					?>
 

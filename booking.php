@@ -1,8 +1,8 @@
 <?php 
 	
 	include 'config.php';
-
 	session_start();
+
 
 	if(!isset($_SESSION['username'])|| empty($_SESSION['username'])){
 
@@ -10,14 +10,37 @@
 
 		exit;
 	}
+////////////////////////////////////////////////////////
+
+	$count ="";
+    $checkClient = $_SESSION['id'];
+
+	$sql = "SELECT clientId FROM reservation WHERE clientId = ($checkClient) ";
+
+
+	$result = mysqli_query($link,$sql);
+
+	if(mysqli_num_rows($result)>0){
+
+		header("location:clientProfile.php");
+
+		$_SESSION['Warning'] = TRUE;
+
+	
+	}
+
+
+///////////////////////////////////////////////////////
 
 	$username = $_SESSION['username'];
-// 
-	$checkIn = $checkOut = $reservation = $roomType = $clientId =  "";
-	$check_err =  $reservation_err = $roomType_err ="";
-	
+// 	 
+	$checkIn = $checkOut = $reservation = $roomType = $clientId = $rate= $roomName = "";
+ 	 $reservation_err = $roomType_err ="";
+		
+	$check_err = "Please Fill All Information";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+         
 
          $date1 = $_POST['dayStart'];
          $date2 = $_POST['dayEnd'];
@@ -44,51 +67,77 @@
 
         if($_POST["roomType"] == "solo"){
         	 $roomType = "solo";
-
+        	 $roomName = "Modgud's Gjoll Solo Deluxe";
+        	 $rate = 1000;
         }
         elseif ($_POST["roomType"] == "twin") {
         	$roomType = "twin";
+        	$roomName = "Freyr and Freya's Twin Double Bed Deluxe";
+        	$rate = 1500;
 
         }
         elseif ($_POST["roomType"] == "queen") {
         	$roomType = "queen";
+        	$roomName = "Frigg's Throne and Boudoir";
+        	$rate = 2000;
 
         }
         elseif ($_POST["roomType"] == "king") {
-        	$roomType = "kingr";
+        	$roomType = "king";
+        	$roomName = "Odin's Throne and Bedchamber";
+        	$rate = 2500;
 
         }
         elseif ($_POST["roomType"] == "suite") {
         	$roomType = "suite";
+        	$roomName = "Idun's Garden and Suite";
+        	$rate = 3000;
 
 	    }
 	    elseif ($_POST["roomType"] == "penthouse") {
         	$roomType = "penthouse";
-        }
+        	$roomName = "Heimdall's Rainbow Bridge Penthouse";
+        	$rate = 4000;
 
-        elseif (empty(trim($_POST["roomType"]))){
-        	$roomType_err = "Please Select";
         }
 		
 		 $clientId = $_SESSION['id'];
+		 
+
+		 /////////////////////////////
+		 //$roomPick = $roomType;
 
 
-     	if(empty($check_err) && empty($reservation_err) && empty($roomType_err)){
+		 $sql = "SELECT room_type FROM reservation WHERE room_type = ($roomPick)";
 
-	     	$sql = " INSERT INTO reservation (check_in, check_out, reserve_name, room_type, clientId) VALUES ('$checkIn','$checkOut','$reservation','$roomType','$clientId') ";
+			$result = mysqli_query($link,$sql);
+
+			if(mysqli_num_rows($result)>0){
+
+				$roomType_err = $roomName. "is Not Available";
+			
+			}
+
+		 /////////////////////////////
+
+
+     	if(empty($reservation_err) && empty($roomType_err)){
+
+	     	$sql = " INSERT INTO reservation (check_in, check_out, reserve_name, room_type, clientId, room_rate) VALUES ('$checkIn','$checkOut','$reservation','$roomType','$clientId', '$rate') ";
 
 	     	if(mysqli_query($link, $sql)){
 
+	     		   $_SESSION['roomName'] = $roomType;
 	               header("location: clientprofile.php");
 	            } 	
 
 			else{
 		         
-		          ?>
-           			 <script type="text/javascript">
-           			 alert('Error occured while inserting your data');
-            		</script>
-            	  <?php
+		 ?>
+           	<script type="text/javascript">
+           	alert('Error occured while inserting your data');
+            </script>
+        <?php
 
 				}
 
@@ -99,6 +148,9 @@
 
 	  
 ?>
+			
+
+
 
 <html>
 <head>
@@ -112,6 +164,9 @@
 </head>
 
 	<script type="text/javascript">
+
+		
+
 
 	   window.setTimeout(function() {
 	    $(".alert").fadeTo(500, 0).slideUp(500, function(){
@@ -145,7 +200,7 @@
 
 					<div class="fullForm">			
 
-						<form action="<?php echo htmlspecialchars ($_SERVER['PHP_SELF']); ?> " id="form" method="post" >	
+						<form action="<?php echo htmlspecialchars ($_SERVER['PHP_SELF']);?> " id="form" method="post" >	
 							
 						<div class="form-group <?php echo (!empty($check_err)) ? 'has-error' : ''; ?>">	
 
@@ -167,7 +222,14 @@
 								<h4 class="reserveNme">Reservation Name</h4>
 								<input type="text" name="rname" id="rname" class="resname" value="<?php echo $reservation?>" placeholder="Enter Name" required>
 							</div>
-<!-- name="text" -->
+					
+					<?php
+
+						$sql = "SELECT room_type FROM reservation";
+
+
+
+					?>
 							<div class="roomType">
 								<h4 class="roomLabel">Room Type</h4>
 								<select  name="roomType" id="roomType" class="room" required>
