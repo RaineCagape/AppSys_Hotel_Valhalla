@@ -34,13 +34,14 @@
 
 	$username = $_SESSION['username'];
 // 	 
-	$checkIn = $checkOut = $reservation = $roomType = $clientId = $rate= $roomName = "";
+	$checkIn = $checkOut = $reservation = $roomNum = $clientId = $rate= $roomName =  $warn =  "";
  	 $reservation_err = $roomType_err ="";
 		
 	$check_err = "Please Fill All Information";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-         
+        	
+         $clientId = $_SESSION['id'];
 
          $date1 = $_POST['dayStart'];
          $date2 = $_POST['dayEnd'];
@@ -66,80 +67,71 @@
 
 
         if($_POST["roomType"] == "solo"){
-        	 $roomType = "solo";
+        	 $roomNum = 1;
         	 $roomName = "Modgud's Gjoll Solo Deluxe";
-        	 $rate = 1000;
+        	 $rate = 2500;
         }
         elseif ($_POST["roomType"] == "twin") {
-        	$roomType = "twin";
+        	$roomNum = 2;
         	$roomName = "Freyr and Freya's Twin Double Bed Deluxe";
-        	$rate = 1500;
+        	$rate = 3500;
 
         }
         elseif ($_POST["roomType"] == "queen") {
-        	$roomType = "queen";
+        	$roomNum = 3;
         	$roomName = "Frigg's Throne and Boudoir";
-        	$rate = 2000;
+        	$rate = 8499;
 
         }
         elseif ($_POST["roomType"] == "king") {
-        	$roomType = "king";
+        	$roomNum = 4;
         	$roomName = "Odin's Throne and Bedchamber";
-        	$rate = 2500;
+        	$rate = 9399;
 
         }
         elseif ($_POST["roomType"] == "suite") {
-        	$roomType = "suite";
+        	$roomNum = 5;
         	$roomName = "Idun's Garden and Suite";
-        	$rate = 3000;
+        	$rate = 15000;
 
 	    }
 	    elseif ($_POST["roomType"] == "penthouse") {
-        	$roomType = "penthouse";
+        	$roomNum = 6;
         	$roomName = "Heimdall's Rainbow Bridge Penthouse";
-        	$rate = 4000;
+        	$rate = 16000;
 
         }
 		
-		 $clientId = $_SESSION['id'];
+	
 		 
-
 		 /////////////////////////////
-		 //$roomPick = $roomType;
 
+		 $sql1 = "SELECT room_id FROM reservation WHERE room_id = ($roomNum)";
 
-		 $sql = "SELECT room_type FROM reservation WHERE room_type = ($roomPick)";
-
-			$result = mysqli_query($link,$sql);
+			$result = mysqli_query($link,$sql1);
 
 			if(mysqli_num_rows($result)>0){
 
-				$roomType_err = $roomName. "is Not Available";
+				$roomType_err = TRUE;
+				$check_err = $roomName." is Not Available";
+
 			
 			}
+
+		
 
 		 /////////////////////////////
 
 
      	if(empty($reservation_err) && empty($roomType_err)){
 
-	     	$sql = " INSERT INTO reservation (check_in, check_out, reserve_name, room_type, clientId, room_rate) VALUES ('$checkIn','$checkOut','$reservation','$roomType','$clientId', '$rate') ";
+	     	$sql = " INSERT INTO reservation (check_in, check_out, reserve_name, room_id, clientId, room_rate) VALUES ('$checkIn','$checkOut','$reservation','$roomNum','$clientId', '$rate') ";
 
 	     	if(mysqli_query($link, $sql)){
 
 	     		   $_SESSION['roomName'] = $roomType;
 	               header("location: clientprofile.php");
 	            } 	
-
-			else{
-		         
-		 ?>
-           	<script type="text/javascript">
-           	alert('Error occured while inserting your data');
-            </script>
-        <?php
-
-				}
 
 
 		}

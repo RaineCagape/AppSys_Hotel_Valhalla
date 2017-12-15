@@ -58,7 +58,7 @@
 
 				if(isset($_SESSION['Warning'])||!empty($_SESSION['Warning'])){ 
 
-					$warning = "<b>Note: </b>You Can only apply for reservation once";
+					$warning = "<b>Note: </b>You Can Only Apply for Reservation Once";
 
 				?>
 				<script type="text/javascript">
@@ -87,7 +87,7 @@
 					
 					<?php 
 
-						$sql = " SELECT reserve_name, check_in, check_out, room_type, room_rate  FROM reservation WHERE clientId = ('$id') ORDER BY id DESC";
+						$sql = " SELECT reserve_name, check_in, check_out, room_id, room_rate  FROM reservation WHERE clientId = ('$id') ";
 
 						$result = mysqli_query($link,$sql);
 
@@ -99,33 +99,33 @@
 							$reservation =$row['reserve_name'];
 							$check_in =$row['check_in'];
 							$check_out = $row['check_out']; 
-							$room_type = $row['room_type'];
+							$room_id = $row['room_id'];
 							$room_rate = $row['room_rate'];
 
-							if($room_type == "solo"){
+							if($room_id == 1){
 
 					        	 $roomName = "Modgud's Gjoll Solo Deluxe";
 					        }
-					        elseif ($room_type == "twin") {
+					        elseif ($room_id == 2) {
 					        	
 					        	$roomName = "Freyr and Freya's Twin Double Bed Deluxe";
 
 					        }
-					        elseif ($room_type == "queen") {
+					        elseif ($room_id == 3) {
 					        
 					        	$roomName = "Frigg's Throne and Boudoir";
 
 					        }
-					        elseif ($room_type == "king") {
+					        elseif ($room_id == 4) {
 					        	
 					        	$roomName = "Odin's Throne and Bedchamber";
 
 					        }
-					        elseif ($room_type == "suite") {
+					        elseif ($room_id == 5) {
 					   
 					        	 $roomName = "Idun's Garden and Suite";
 						    }
-						    elseif ($room_type == "penthouse") {
+						    elseif ($room_id == 6) {
 					        	
 					        	$roomName = "Heimdall's Rainbow Bridge Penthouse";
 					        }
@@ -138,7 +138,7 @@
 							<h4 class="user">Check-in Date: <?php echo $check_in;  ?> </h4>
 							<h4 class="user">Check-out Date: <?php echo $check_out; ?></h4>
 							<h4 class="user">Room Type: <?php echo  $roomName; ?></h4>
-							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?></h4> 
+							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?>.00</h4> 
 						
 					<?php 
 
