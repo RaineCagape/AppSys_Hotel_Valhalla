@@ -138,7 +138,10 @@
 							<h4 class="user">Check-in Date: <?php echo $check_in;  ?> </h4>
 							<h4 class="user">Check-out Date: <?php echo $check_out; ?></h4>
 							<h4 class="user">Room Type: <?php echo  $roomName; ?></h4>
-							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?>.00</h4> 
+							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?>.00</h4>
+							<form action="cancelbooking.php">
+								<input type="submit" name="btnLogin" id="btn" value="Cancel Booking"/>
+							</form>
 						
 					<?php 
 
