@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2017 at 03:39 PM
+-- Generation Time: Dec 18, 2017 at 06:03 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -42,7 +42,8 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`id`, `username`, `password`, `fname`, `lname`, `email`) VALUES
 (12, 'neil', '$2y$10$UixSJ7p5Idxx0XU1DLBzauShozeP4DLpFe9MU5jwX4j9QxDI6rN/i', 'Aaron', 'Minyard', 'aaron@gmail.com'),
 (11, 'andrew', '$2y$10$DWzY.hK/P6hrJPJZ/KJwI.NupvlCzYMkgNrNvuKKIjuRP5JVB2Y1W', 'Andrew', 'Minyard', 'andmin@gmail.com'),
-(13, 'rcagape', '$2y$10$w/6CX4noNUkGCcxfql6kx.jGP2inGMu/enzQzC7rqHWC83x1xIFry', 'Reyna', 'Cagape', 'istolealoafofbread24601@lesmis.com');
+(13, 'rcagape', '$2y$10$w/6CX4noNUkGCcxfql6kx.jGP2inGMu/enzQzC7rqHWC83x1xIFry', 'Reyna', 'Cagape', 'istolealoafofbread24601@lesmis.com'),
+(18, 'ghck', '$2y$10$vsAWu72CzzVyoTh97/gyBuAfJ3PMQlkRTogLqsmxBfMIi4Dk5fjTq', 'hck', 'ghcyt', 'adf@');
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,7 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`id`, `check_in`, `check_out`, `reserve_name`, `room_id`, `room_rate`, `clientId`) VALUES
-(21, '2017-12-01', '2017-12-02', 'WORK! WORK!', 2, 3500, 13);
+(29, '2017-11-29', '2017-12-22', 'Personal Reservation', 3, 8499, 13);
 
 -- --------------------------------------------------------
 
@@ -122,12 +123,12 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

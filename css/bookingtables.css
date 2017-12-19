@@ -1,0 +1,35 @@
+.containtables{
+	width: 800px;
+	height: 1000px;
+	position: absolute;
+	left: 350px;
+	top: 180px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-top: solid;
+	border-bottom: solid;
+	border-color: #CFB53B;
+	border-width: 1px;
+
+}
+.bookingtables{
+	border-style: solid;
+	border-color: #CFB53B;
+	width: 755px;
+	height: 180px;
+	position: absolute;
+	border-width: 1px;
+	margin: 20px;
+}
+
+h3.bookinglabel{
+	color: #CFB53B;
+	margin: 10px;
+	font-family: century gothic;
+}
+
+h5.infolabel{
+	font-family: century gothic;
+	color: #CFB53B;
+	margin: 10px;
+}

@@ -207,7 +207,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 						<input type="text" name="lname" class="lastnme" id="lname" placeholder="last name" value="<?php echo $lname; ?>"  data-toggle="popover" data-content="<?php echo $lname_err;?>" />
 
 						<h5 class="email">E-mail Address*</h5>
-						<input type="text" name="email" class="emadd" id="email" placeholder="e-mail" value="<?php echo $email; ?>" pattern="^[A-Za-z0-9_]{1,15}$" autofocus required title="Should only contain alphanumeric characters and an underscore" data-toggle="popover" data-content="<?php echo $email_err;?>" />
+						<input type="text" name="email" class="emadd" id="email" pattern ="^[A-Za-z0-9@]{1,15}$"  autofocus required title="Should only contain alphanumeric characters and an underscore" placeholder="e-mail" value="<?php echo $email; ?>" data-toggle="popover" data-content="<?php echo $email_err;?>" />
 
 						<input type="submit" value="Sign Up" class="submit"><br></a>
 

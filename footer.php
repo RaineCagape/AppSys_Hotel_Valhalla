@@ -24,8 +24,11 @@
 								<div class="sponsors">
 									<h3 class="footerheaders">In Partnership with</h3>
 
+									<h5 class="info" style="position: absolute; left: 110px; top: 50px;">Vikings Restaurant and Buffet</h5>
+
 									<img src="images/vikingslogo.png" class="vikings">
 								</div>
+								<a href="developerspage.php" class="developers" style="float: right">The Developers >></a>
 </div>	
 </body>
 </html>

@@ -31,3 +31,24 @@ h5.info{
   width: 100px;
   position: absolute;
 }
+
+a.developers{
+ font-family: century gothic;
+ color: #CFB53B;
+ font-size: 20px;
+
+}
+
+a.developers:link {
+    color: white;
+}
+
+a.developers:hover {
+    color: white;
+    text-decoration: none;
+    -webkit-transition: color .5s linear;
+    -moz-transition: color .5s linear;
+   -ms-transition: color .5s linear;
+   -o-transition: color .5s linear;
+   transition: color .5s linear;
+}
