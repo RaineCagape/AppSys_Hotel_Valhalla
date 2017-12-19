@@ -11,12 +11,36 @@
 		exit;
 	}
 
-	
+	elseif(isset($_SESSION['username'])&&$_SESSION['username']=='admin')
+    {
+        header("location: admin.php");
+        exit;
+    }
 
-	$fname = $_SESSION['firstname'];
+    $fname = $_SESSION['firstname'];
 	$lname = $_SESSION['lastname'];
+
+	if(!isset($_SESSION['id'])){
+
+		$query = "SELECT id from account WHERE fname = ($fname) AND lname = ($lname)";
+		
+		$res = mysqli_query($link,$query);
+
+		if(mysqli_num_rows($res)>0){
+
+			while($row =mysqli_fetch_array($res)){
+				$_SESSION['id']=$row['id'];
+
+			}
+			mysqli_free_result($res);
+		}
+
+
+	}
+
 	$id = $_SESSION['id'];
 	$completeName = $fname.' '.$lname;
+	$days ="";
 
 
 ?>
@@ -78,6 +102,7 @@
 		
 				}
 					 unset($_SESSION['Warning']);
+
 				?>
 					
 
@@ -85,12 +110,12 @@
 						<div class="profilepic">
 						<img src="images/user.png" class="dp"> 
 
-						<h2 class="fullname"><?php echo $completeName; ?></h2>
+						<h2 class="fullname"><?php echo $completeName;?> </h2>
 						<div class="otherinfo">
 					
 					<?php 
 
-						$sql = " SELECT reserve_name, check_in, check_out, room_id, room_rate  FROM reservation WHERE clientId = ('$id') ";
+						$sql = " SELECT check_in, check_out, room_id, room_charge FROM reservation WHERE clientId = ('$id') ";
 
 						$result = mysqli_query($link,$sql);
 
@@ -99,49 +124,65 @@
 
 							while($row =mysqli_fetch_array($result)){
 
-							$reservation =$row['reserve_name'];
+							
 							$check_in =$row['check_in'];
 							$check_out = $row['check_out']; 
 							$room_id = $row['room_id'];
-							$room_rate = $row['room_rate'];
+							$room_charge = $row['room_charge'];
 
 							if($room_id == 1){
 
 					        	 $roomName = "Modgud's Gjoll Solo Deluxe";
+					        	  $rate = 2500;
 					        }
 					        elseif ($room_id == 2) {
 					        	
 					        	$roomName = "Freyr and Freya's Twin Double Bed Deluxe";
+					        	$rate = 3500;
 
 					        }
 					        elseif ($room_id == 3) {
 					        
 					        	$roomName = "Frigg's Throne and Boudoir";
+					        	$rate = 8499;
 
 					        }
 					        elseif ($room_id == 4) {
 					        	
 					        	$roomName = "Odin's Throne and Bedchamber";
+					        	$rate = 9399;
 
 					        }
 					        elseif ($room_id == 5) {
 					   
 					        	 $roomName = "Idun's Garden and Suite";
+					        	 $rate = 15000;
 						    }
 						    elseif ($room_id == 6) {
 					        	
 					        	$roomName = "Heimdall's Rainbow Bridge Penthouse";
+					        	$rate = 16000;
 					        }
 
+					       
+					        $chin = str_replace("-", "", $check_in);
+							 $chout = str_replace("-", "", $check_out);
+							 $chinout = $chout - $chin;
+ 							
+ 							$days = $chinout;
+							 
+							if($chinout==0){
+		 						$days =1;
+		 					}
 
+							 
 					?>
-				
-						
-							<h4 class="user">Reservation Name: <b style="font-size: 20px;"><?php echo strtoupper($reservation); ?><b></h4>
+											
 							<h4 class="user">Check-in Date: <?php echo $check_in;  ?> </h4>
 							<h4 class="user">Check-out Date: <?php echo $check_out; ?></h4>
 							<h4 class="user">Room Type: <?php echo  $roomName; ?></h4>
-							<h4 class="user">Rate: ₱ <?php echo  $room_rate; ?>.00</h4>
+							<h4 class="user">Rate: <?php echo  $rate; ?>.00 x <?php echo $days; ?> day/s</h4>
+							<h4 class="user">Charge: ₱ <?php echo  $room_charge; ?>.00 </h4>
 
 								<button type="button" class="btn " data-toggle="modal" data-target="#Confirm" style="float: right; margin-top: -50px;">Cancel Booking</button>  
 						

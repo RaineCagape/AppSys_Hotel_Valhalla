@@ -34,8 +34,8 @@
 
 	$username = $_SESSION['username'];
 // 	 
-	$checkIn = $checkOut = $reservation = $roomNum = $clientId = $rate= $roomName =  $warn =  "";
- 	 $reservation_err = $roomType_err ="";
+	$checkIn = $checkOut = $roomNum = $clientId = $charge = $roomName =  $warn = $rate = $days= "";
+ 	 $roomType_err ="";
 		
 	$check_err = "Please Fill All Information";
 
@@ -45,24 +45,23 @@
 
          $date1 = $_POST['dayStart'];
          $date2 = $_POST['dayEnd'];
+         $curdate = date('Y-m-d');
 
-        if(strtotime($date1) > strtotime($date2)){
+        if($date1<$curdate){
+
+        	$check_err = "Invalid Date. Please check the date today";
+
+        }
+
+        elseif(strtotime($date1) > strtotime($date2)){
 
           $check_err = "Check-out date should not contradict with Check-in date";
         }
-        
+
         else{
 
         	$checkIn = $date1;
             $checkOut = $date2;
-        }
-
-        if(empty(trim($_POST["rname"]))){
-        	$reservation_err = "Required";
-        }
-
-        else{
-        	$reservation = trim($_POST["rname"]);
         }
 
 
@@ -102,30 +101,101 @@
 
         }
 		
+		 $chin = str_replace("-", "", $checkIn);
+		 $chout = str_replace("-", "", $checkOut);
+		 $chinout = $chout - $chin;
+ 		
+ 		$days = $chinout;
+		 
+		 if($chinout==0){
+		 	$days =1;
+		 }
+
+		 $charge = $rate *  $days;
 	
 		 
 		 /////////////////////////////
 
-		 $sql1 = "SELECT room_id FROM reservation WHERE room_id = ($roomNum)";
 
-			$result = mysqli_query($link,$sql1);
 
-			if(mysqli_num_rows($result)>0){
+		$sql1 = "SELECT room_id FROM reservation WHERE check_out >= '$checkIn' AND check_out <= '$checkOut'";
 
-				$roomType_err = TRUE;
-				$check_err = $roomName." is Not Available";
+			$result1 = mysqli_query($link,$sql1);
+
+			if(mysqli_num_rows($result1)>0){
+
+				while($row =mysqli_fetch_array($result1)){
+
+					$roomResult = $row['room_id'];
+
+					if($roomNum == $roomResult){
+
+					$roomType_err = TRUE;
+					$check_err = $roomName." is Not Available at that date";
+
+
+					}
+
+				}
 
 			
 			}
 
-		
 
+
+
+		$sql2 = "SELECT room_id FROM reservation WHERE (check_in = '$checkIn' and check_out > '$checkOut')";
+
+			$result2 = mysqli_query($link,$sql2);
+
+			if(mysqli_num_rows($result2)>0){
+
+				while($row =mysqli_fetch_array($result2)){
+
+					$roomResult = $row['room_id'];
+
+					if($roomNum == $roomResult){
+
+					$roomType_err = TRUE;
+					$check_err = $roomName." is Not Available at that date";
+
+
+					}
+
+				}
+
+			
+			}
+
+
+		$sql3 = "SELECT room_id FROM reservation WHERE check_in > '$checkIn' AND check_out >= '$checkOut'";
+
+			$result3 = mysqli_query($link,$sql3);
+
+			if(mysqli_num_rows($result3)>0){
+
+				while($row =mysqli_fetch_array($result3)){
+
+					$roomResult = $row['room_id'];
+
+					if($roomNum == $roomResult){
+
+					$roomType_err = TRUE;
+					$check_err = $roomName." is Not Available at that date";
+
+
+					}
+
+				}
+
+			
+			}
 		 /////////////////////////////
 
 
      	if(empty($reservation_err) && empty($roomType_err)){
 
-	     	$sql = " INSERT INTO reservation (check_in, check_out, reserve_name, room_id, clientId, room_rate) VALUES ('$checkIn','$checkOut','$reservation','$roomNum','$clientId', '$rate') ";
+	     	$sql = " INSERT INTO reservation (check_in, check_out, room_id, clientId, room_charge) VALUES ('$checkIn','$checkOut','$roomNum','$clientId', '$charge') ";
 
 	     	if(mysqli_query($link, $sql)){
 
@@ -187,10 +257,12 @@
                   ?> 
 
 					<div class="contDate">
-						<h1 class="topLabel">DIRECT BOOKING</h1>
+						<h1 class="topLabel">DIRECT BOOKING</h1><label style="float: right;">
 						<h5 class="subLabel">BEST RATE GUARANTEED!</h5>
 
 					<div class="fullForm">			
+
+
 
 						<form action="<?php echo htmlspecialchars ($_SERVER['PHP_SELF']);?> " id="form" method="post" >	
 							
@@ -199,7 +271,7 @@
 							<div class="alert alert-danger" data-dismiss="alert" id="alert" role="alert" style="width:500px; font-size: 13px; margin-top: -55px; padding-bottom: 10px;"><?php echo $check_err; ?></div>
 
 							<div class="datestart" >
-								<h4 class="begin">Check-in Date</h4>
+								<h4 class="begin">Check-in Date </h4>
 								<input type="date" name="dayStart" id="dayStart" class="start" value="<?php echo $checkIn;?>" required/>
 							</div>
 							
@@ -210,11 +282,6 @@
 							
 						</div>
 
-							<div class="reservename">
-								<h4 class="reserveNme">Reservation Name</h4>
-								<input type="text" name="rname" id="rname" class="resname" value="<?php echo $reservation?>" placeholder="Enter Name" required>
-							</div>
-					
 					<?php
 
 						$sql = "SELECT room_type FROM reservation";
